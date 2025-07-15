@@ -1,0 +1,243 @@
+/* General reset and typography */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  display: flex;
+  font-weight: 300;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #fff;
+  border-right: 1px solid #ddd;
+}
+.sidebar-logo .icon {
+  font-size: 22px;
+  color: #00c896;
+}
+.sidebar-social img,
+.sidebar-social svg {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg);
+  transition: filter 0.3s;
+}
+
+.sidebar-social a[href*="github"] img:hover {
+  filter: brightness(0) saturate(100%) invert(10%);
+}
+
+.sidebar-social a[href*="wa.me"] img:hover {
+  filter: brightness(0) saturate(100%) invert(50%) sepia(80%) saturate(1000%) hue-rotate(90deg);
+}
+
+.sidebar-social a[href^="tel"] svg:hover path {
+  fill: #1E90FF;
+}
+
+.sidebar-social a[href*="mailto"] img:hover {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(80%) saturate(3000%) hue-rotate(350deg);
+}
+
+.sidebar-social a[href*="linkedin"] img:hover {
+  filter: brightness(0) saturate(100%) invert(34%) sepia(85%) saturate(5000%) hue-rotate(190deg);
+}
+
+.sidebar-social a[href^="tel"] svg path {
+  fill: black;
+}
+
+.sidebar-social a[href*="computrabajo"] img {
+  filter: brightness(0) invert(0); 
+}
+
+.sidebar-social img:hover,
+.sidebar-social svg:hover,
+.sidebar-social img:active,
+.sidebar-social svg:active {
+  filter: invert(0%);
+}
+
+/* Header */
+header {
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+header .logo {
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #00c896;
+}
+header nav {
+  display: flex;
+  gap: 20px;
+}
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  padding: 6px 0;
+  position: relative;
+  transition: color 0.3s;
+}
+header nav a:hover {
+  color: #00c896;
+}
+header nav a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: #00c896;
+  border-radius: 2px;
+}
+header nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #00c896;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+header nav a:hover::after {
+  width: 100%;
+}
+
+/* Buttons */
+.btn {
+  background: #00c896;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 400;
+  transition: background 0.3s, transform 0.2s;
+}
+.btn:hover {
+  background: #00a47a;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skill icon filters */
+.skill-header img {
+  width: 24px;
+  height: 24px;
+  filter: none;
+}
+
+.skill-header img[alt="React"] {
+  filter: invert(71%) sepia(39%) saturate(4983%) hue-rotate(159deg) brightness(100%) contrast(97%);
+}
+.skill-header img[alt="Java"] {
+  filter: invert(22%) sepia(96%) saturate(2717%) hue-rotate(184deg) brightness(93%) contrast(101%);
+}
+.skill-header img[alt="JavaScript"] {
+  filter: invert(81%) sepia(63%) saturate(5070%) hue-rotate(358deg) brightness(100%) contrast(100%);
+}
+.skill-header img[alt="Node.js"] {
+  filter: invert(62%) sepia(23%) saturate(853%) hue-rotate(63deg) brightness(89%) contrast(84%);
+}
+.skill-header img[alt="MySQL"] {
+  filter: invert(40%) sepia(16%) saturate(2017%) hue-rotate(173deg) brightness(92%) contrast(94%);
+}
+.skill-header img[alt="MongoDB"] {
+  filter: invert(55%) sepia(29%) saturate(775%) hue-rotate(66deg) brightness(90%) contrast(88%);
+}
+.skill-header img[alt="CSS3"] {
+  filter: invert(31%) sepia(69%) saturate(1684%) hue-rotate(183deg) brightness(93%) contrast(97%);
+}
+.skill-header img[alt="HTML5"] {
+  filter: invert(47%) sepia(96%) saturate(746%) hue-rotate(341deg) brightness(95%) contrast(98%);
+}
+
+footer {
+  background: #f8f8f8;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+footer form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+footer input,
+footer textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95em;
+  width: 220px;
+  box-sizing: border-box;
+  text-align: left; /* Alinea el texto dentro */
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+footer textarea {
+  width: 300px;
+  min-height: 80px;
+  resize: vertical;
+}
+
+footer input:focus,
+footer textarea:focus {
+  border-color: #00c896;
+  box-shadow: 0 0 0 2px rgba(0,200,150,0.2);
+  outline: none;
+}
+
+footer button {
+  background: #00c896;
+  color: white;
+  border: none;
+  padding: 12px 20px; /* Más compacto */
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+  align-self: center;
+  white-space: nowrap; /* Evita que se estire */
+}
+
+footer button:hover {
+  background: #00a47a;
+  transform: translateY(-2px);
+}
+
+footer p {
+  color: #777;
+  font-size: 0.9em;
+  margin-top: 20px;
+}
+
+.education-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  gap: 10px;
+}

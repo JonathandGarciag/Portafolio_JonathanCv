@@ -1,0 +1,376 @@
+/* Sections */
+section {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 50px 30px;
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+section h2 {
+  border-left: 4px solid #00c896;
+  padding-left: 12px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Project */
+.project img {
+  border-radius: 6px;
+  transition: transform 0.3s;
+}
+.project img:hover {
+  transform: scale(1.03);
+}
+
+/* About */
+.about {
+  background: #fff;
+  padding: 60px 20px;
+}
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.about-photo-wrapper {
+  position: relative;
+  width: 220px;
+  height: 260px;
+}
+.about-photo-wrapper .photo-bg {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  background: #00c896;
+  border-radius: 8px;
+  z-index: 1;
+}
+.about-photo-wrapper img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  border-radius: 8px;
+}
+.about-text {
+  flex: 1;
+  min-width: 280px;
+}
+.about-text .subtitle {
+  color: #999;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+.about-text h2 {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin: 0 0 15px;
+  line-height: 1.3;
+}
+.about-text h2 span {
+  color: #00c896;
+}
+.about-text .decorative-line {
+  width: 40px;
+  height: 3px;
+  background: #00c896;
+  margin: 10px 0 20px;
+  border-radius: 2px;
+}
+.about-text p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Skill */
+.skill {
+  background: #e6f8f3;
+  color: #00a47a;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: 400;
+  transition: background 0.3s, transform 0.2s;
+}
+.skill:hover {
+  background: #d1f1e6;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background: #f8f8f8;
+  color: #777;
+  border-top: 1px solid #ddd;
+}
+footer p {
+  margin: 0;
+}
+
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.education-year {
+  position: relative;
+  padding-left: 30px;
+  border-left: 3px solid #00c896;
+}
+
+.education-year h3 {
+  font-size: 1.2em;
+  color: #00c896;
+  margin-bottom: 10px;
+}
+
+.education-detail {
+  background: #ffffff;
+  padding: 15px 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.education-detail h4 {
+  margin: 0 0 5px;
+  font-weight: 600;
+}
+
+.education-detail p {
+  margin: 0 0 5px;
+  color: #666;
+  font-size: 0.95em;
+}
+
+.education-detail span {
+  display: block;
+  font-size: 0.9em;
+  color: #888;
+}
+
+
+/* Tabs container */
+.education-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Tab buttons */
+.tab-button {
+  padding: 8px 16px;
+  border: 1px solid #00c896;
+  background: #fff;
+  color: #00c896;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.tab-button:hover {
+  background: #00c896;
+  color: #fff;
+}
+.tab-button.active {
+  background: #00c896;
+  color: #fff;
+}
+
+/* Panels */
+.education-content {
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.education-panel {
+  display: none;
+  animation: fadeIn 0.4s ease forwards;
+}
+.education-panel.active {
+  display: block;
+}
+
+.education-panel h3 {
+  margin-top: 0;
+  font-weight: 600;
+}
+.education-panel p {
+  margin: 4px 0;
+  color: #555;
+}
+.education-panel span {
+  font-size: 0.95em;
+  color: #777;
+}
+
+.view {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.view .profile-image {
+  border-radius: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.view h1 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.view p {
+  color: #ccc;
+}
+
+/* Swiper general */
+.viewer-swiper {
+  width: 100%;
+  padding: 50px 0;
+}
+
+/* Cada slide ocupará automáticamente el espacio que le toque */
+.viewer-swiper .swiper-slide {
+  width: 50% !important;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenido dentro del slide */
+.viewer-swiper .view-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  background: #1a1a1a;          /* Fondo del marco */
+  border: 1px solid #333;       /* Borde visible */
+  border-radius: 8px;           /* Bordes redondeados */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5); /* Sombra opcional */
+  box-sizing: border-box;
+}
+
+
+.viewer-swiper .swiper-slide {
+  width: 50% !important;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.viewer-swiper .profile-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.projects {
+  background: #181818;
+  padding: 60px 20px;
+  color: #fff;
+}
+.projects h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.project img {
+  max-width: 25%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.project {
+  background: #222;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  width: auto; /* Asegura que no ocupe todo */
+}
+
+.project img {
+  border-radius: 6px;
+  width: 100%;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.carousel {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.swiper-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.swiper-slide .project {
+  max-width: 300px;
+  width: 100%;
+}
+
+.certificates {
+  background: #fff;
+  padding: 60px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-top: 40px;
+}
+
+.certificates h2 {
+  border-left: 4px solid #00c896;
+  padding-left: 12px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.certificates-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.certificate {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.certificate img {
+  width: 60px;
+  margin-bottom: 12px;
+}
+
+.certificate p {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.certificate .btn {
+  padding: 8px 16px;
+  background: #00c896;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.certificate .btn:hover {
+  background: #00a47a;
+}
