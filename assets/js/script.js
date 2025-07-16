@@ -100,28 +100,57 @@ mediumZoom('.viewer-swiper .profile-image', {
 
 
 // Carrusel Projects (puedes ajustar como desees)
-var projectsSwiper = new Swiper(".projects-swiper", {
-  slidesPerView: 3,
-  spaceBetween: 20,
+const projectsSwiper = new Swiper(".projects-swiper", {
+  slidesPerView: 1,              // 👈 SOLO UNO visible
+  spaceBetween: 40,
   loop: true,
+  centeredSlides: true,          // opcional: centra el slide
   navigation: {
-    nextEl: ".projects .swiper-button-next",
-    prevEl: ".projects .swiper-button-prev"
+    nextEl: ".projects-swiper .swiper-button-next",
+    prevEl: ".projects-swiper .swiper-button-prev"
   },
   pagination: {
-    el: ".projects .swiper-pagination",
+    el: ".projects-swiper .swiper-pagination",
     clickable: true
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1
-    },
-    768: {
-      slidesPerView: 2
-    },
-    1024: {
-      slidesPerView: 3
-    }
+  }
+});
+
+// Galería modal
+const modal = document.getElementById("gallery-modal");
+const modalMainImg = document.getElementById("modal-main-img");
+const modalThumbnails = document.getElementById("modal-thumbnails");
+const modalClose = document.querySelector(".modal-close");
+
+// Abrir galería al hacer clic en cualquier imagen
+document.querySelectorAll(".open-gallery").forEach(img => {
+  img.addEventListener("click", () => {
+    const slide = img.closest(".project-slide");
+    const images = JSON.parse(slide.dataset.images);
+    modalMainImg.src = images[0]; // Mostrar primera como principal
+
+    // Limpiar thumbnails anteriores
+    modalThumbnails.innerHTML = "";
+
+    images.forEach(src => {
+      const thumb = document.createElement("img");
+      thumb.src = src;
+      thumb.addEventListener("click", () => {
+        modalMainImg.src = src;
+      });
+      modalThumbnails.appendChild(thumb);
+    });
+
+    modal.style.display = "block";
+  });
+});
+
+// Cerrar modal
+modalClose.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
   }
 });
 

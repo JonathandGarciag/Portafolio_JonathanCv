@@ -314,16 +314,80 @@
 
             <br>
 
-            <section class="projects" id="projects">
+              <section class="projects" id="projects">
                 <h2>Projects</h2>
                 <div class="swiper-container projects-swiper">
-                    <div class="swiper-wrapper">
+                  <div class="swiper-wrapper">
+              
+                    <!-- Proyecto 1 -->
+                    <div class="swiper-slide project-slide" data-images='["./assets/img/Profile.png", "./assets/img/Profile.png"]'>
+                      <div class="project-gallery-preview">
+                        <img class="main-img open-gallery" src="./assets/img/Profile.png" alt="Main Image">
+                        <div class="side-images">
+                          <img class="thumb-img open-gallery" src="./assets/img/Profile.png" alt="Thumb 1">
+                          <img class="thumb-img open-gallery" src="./assets/img/Profile.png" alt="Thumb 2">
+                        </div>
+                      </div>
+                      <h3>Project Title 1</h3>
+                      <div class="project-links">
+                        <a href="#" class="btn">GitHub</a>
+                        <a href="#" class="btn">Live Demo</a>
+                      </div>
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-pagination"></div>
+
+                    <div class="swiper-slide project-slide" data-images='["./assets/img/Profile.png", "./assets/img/Profile.png"]'>
+                        <div class="project-gallery-preview">
+                          <img class="main-img open-gallery" src="./assets/img/Profile.png" alt="Main Image">
+                          <div class="side-images">
+                            <img class="thumb-img open-gallery" src="./assets/img/Profile.png" alt="Thumb 1">
+                            <img class="thumb-img open-gallery" src="./assets/img/Profile.png" alt="Thumb 2">
+                          </div>
+                        </div>
+                        <h3>Project Title 1</h3>
+                        <div class="project-links">
+                          <a href="#" class="btn">GitHub</a>
+                          <a href="#" class="btn">Live Demo</a>
+                        </div>
+                      </div>
+              
+                    <!-- Puedes duplicar este bloque para más proyectos -->
+              
+                  </div>
+              
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-pagination"></div>
                 </div>
-            </section>
+              </section>
+              
+              <!-- GALERÍA MODAL -->
+              <div id="gallery-modal" class="modal">
+                <span class="modal-close">&times;</span>
+                <div class="modal-content">
+                  <img id="modal-main-img" src="" alt="Main Gallery">
+                  <div id="modal-thumbnails" class="thumbnails"></div>
+                </div>
+              </div>
+
+              <div class="swiper projects-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <!-- tu contenido de proyecto 1 -->
+                  </div>
+                  <div class="swiper-slide">
+                    <!-- tu contenido de proyecto 2 -->
+                  </div>
+                  <!-- etc... -->
+                </div>
+              
+                <!-- Navegació n -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+              
+              
+              
 
             <section class="certificates" id="certificate">
                 <h2>Mis Certificados</h2>
