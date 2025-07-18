@@ -15,15 +15,6 @@ section h2 {
   font-weight: 600;
 }
 
-/* Project */
-.project img {
-  border-radius: 6px;
-  transition: transform 0.3s;
-}
-.project img:hover {
-  transform: scale(1.03);
-}
-
 /* About */
 .about {
   background: #fff;
@@ -155,15 +146,12 @@ footer p {
   color: #888;
 }
 
-
-/* Tabs container */
 .education-tabs {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
 
-/* Tab buttons */
 .tab-button {
   padding: 8px 16px;
   border: 1px solid #00c896;
@@ -183,7 +171,6 @@ footer p {
   color: #fff;
 }
 
-/* Panels */
 .education-content {
   background: #fff;
   border-radius: 6px;
@@ -211,6 +198,8 @@ footer p {
   color: #777;
 }
 
+/*view*/
+
 .view {
   background: #111;
   color: #fff;
@@ -235,39 +224,28 @@ footer p {
   color: #ccc;
 }
 
-/* Swiper general */
 .viewer-swiper {
   width: 100%;
   padding: 50px 0;
 }
 
-/* Cada slide ocupará automáticamente el espacio que le toque */
 .viewer-swiper .swiper-slide {
-  width: 50% !important;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Contenido dentro del slide */
+
 .viewer-swiper .view-container {
   width: 100%;
   max-width: 500px;
   padding: 15px;
-  background: #1a1a1a;          /* Fondo del marco */
-  border: 1px solid #333;       /* Borde visible */
-  border-radius: 8px;           /* Bordes redondeados */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5); /* Sombra opcional */
+  background: #1a1a1a;        
+  border: 1px solid #333;     
+  border-radius: 8px;        
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5); 
   box-sizing: border-box;
-}
-
-
-.viewer-swiper .swiper-slide {
-  width: 50% !important;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
 }
 
 .viewer-swiper .profile-image {
@@ -276,123 +254,7 @@ footer p {
   object-fit: contain;
 }
 
-/* Estilo carrusel */
-.project-slide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  max-width: 500px;  /* Controla el ancho del contenido */
-  margin: auto;
-}
-.project-gallery-preview {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-  justify-content: center;
-  width: 100%;
-}
-.project-gallery-preview .main-img {
-  width: 250px; /* más pequeño */
-  height: auto;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.project-gallery-preview .side-images {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.project-gallery-preview .thumb-img {
-  width: 80px;  /* más pequeño */
-  height: auto;
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 0.85;
-  transition: opacity 0.2s;
-}
-.project-gallery-preview .thumb-img:hover {
-  opacity: 1;
-}
-
-.projects-swiper .swiper-slide {
-  width: 100%;        /* ✅ ocupa el espacio total del swiper */
-  max-width: 500px;   /* ✅ opcional para limitar tamaño */
-  margin: auto;       /* ✅ centra el slide */
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Estilo modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-.modal-content {
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-}
-#modal-main-img {
-  width: 80%;
-  max-height: 500px;
-  border-radius: 10px;
-}
-.thumbnails {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-  overflow-x: auto;
-  padding: 10px;
-  justify-content: center;
-}
-.thumbnails img {
-  width: 100px;
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 0.7;
-}
-.thumbnails img:hover {
-  opacity: 1;
-}
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: white;
-  font-size: 40px;
-  cursor: pointer;
-}
-.projects-swiper {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-
-.carousel {
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.swiper-container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.swiper-slide .project {
-  max-width: 300px;
-  width: 100%;
-}
+/*Certificado*/
 
 .certificates {
   background: #fff;
@@ -445,4 +307,209 @@ footer p {
 
 .certificate .btn:hover {
   background: #00a47a;
+}
+
+/* Project */
+.project img {
+  border-radius: 6px;
+  transition: transform 0.3s;
+}
+.project img:hover {
+  transform: scale(1.03);
+}
+
+.project img {
+  border-radius: 6px;
+  transition: transform 0.3s;
+}
+.project img:hover {
+  transform: scale(1.03);
+}
+
+.projects-swiper {
+  width: 100vw;
+  width: 100%;
+  margin: 0;
+}
+
+.projects-swiper .swiper-slide {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #fff;
+  padding: 20px;
+}
+
+.project-content {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  width: 100%;
+}
+
+.project-gallery {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.project-gallery .main-img {
+  width: 350px;
+  height: 265px; 
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.project-gallery .side-images {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-gallery .side-images .thumb-img {
+  height: 125px;
+  width: 250px;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.project-gallery .side-images .thumb-img:hover {
+  opacity: 1;
+}
+
+.project-info {
+  flex: 1;
+  min-width: 220px;
+}
+
+.project-info h3 {
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.project-info p {
+  margin: 0 0 15px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.project-links .btn {
+  padding: 8px 16px;
+  background: #00c896;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.project-links .btn:hover {
+  background: #00a47a;
+}
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Modal para viewer */
+.modal-view .modal-content {
+  max-width: 70vw;
+  max-height: 80vh;
+  text-align: center;
+}
+
+#modal-main-img-view {
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Modal para projects */
+.modal-project .modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  text-align: center;
+}
+
+#modal-main-img-project {
+  width: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Reutilizamos thumbnails y close */
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  overflow-x: auto;
+  padding: 10px;
+  justify-content: center;
+}
+.thumbnails img {
+  width: 100px;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.thumbnails img:hover {
+  opacity: 1;
+}
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.modal {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.swiper-button-next:focus,
+.swiper-button-prev:focus,
+.btn:focus,
+img:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }

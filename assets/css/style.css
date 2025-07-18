@@ -4,8 +4,8 @@ body {
   font-family: 'Poppins', sans-serif;
   background: #f5f7fa;
   color: #333;
-  display: flex;
   font-weight: 300;
+  overflow-x: hidden;
 }
 
 /* Sidebar */
@@ -62,9 +62,18 @@ body {
 
 /* Header */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
   background: #ffffff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
 }
+
+
 header .logo {
   font-weight: 600;
   font-size: 1.2em;
@@ -73,16 +82,6 @@ header .logo {
 header nav {
   display: flex;
   gap: 20px;
-}
-header nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: 0.95em;
-  text-transform: uppercase;
-  padding: 6px 0;
-  position: relative;
-  transition: color 0.3s;
 }
 header nav a:hover {
   color: #00c896;
@@ -96,6 +95,16 @@ header nav a.active::after {
   height: 2px;
   background: #00c896;
   border-radius: 2px;
+}
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  padding: 6px 0;
+  position: relative;
+  transition: color 0.3s;
 }
 header nav a::after {
   content: '';
@@ -112,7 +121,7 @@ header nav a:hover::after {
   width: 100%;
 }
 
-/* Buttons */
+/* vootones */
 .btn {
   background: #00c896;
   color: #fff;
@@ -136,7 +145,7 @@ header nav a:hover::after {
   }
 }
 
-/* Skill icon filters */
+/* Skill */
 .skill-header img {
   width: 24px;
   height: 24px;
@@ -193,7 +202,7 @@ footer textarea {
   font-size: 0.95em;
   width: 220px;
   box-sizing: border-box;
-  text-align: left; /* Alinea el texto dentro */
+  text-align: left;
   transition: border 0.3s, box-shadow 0.3s;
 }
 
@@ -214,13 +223,13 @@ footer button {
   background: #00c896;
   color: white;
   border: none;
-  padding: 12px 20px; /* Más compacto */
+  padding: 12px 20px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
   transition: background 0.3s, transform 0.2s;
   align-self: center;
-  white-space: nowrap; /* Evita que se estire */
+  white-space: nowrap; 
 }
 
 footer button:hover {
@@ -240,4 +249,11 @@ footer p {
   justify-content: space-between;
   flex-wrap: wrap; 
   gap: 10px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV - Jonathan García</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    @media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-wrapper {
+    box-shadow: none !important;
+  }
+
+  .left {
+    background-color: #152659 !important;
+    color: white !important;
+  }
+
+  .right {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .skills span {
+    background: #F2EC91 !important;
+  }
+
+  a {
+    color: #D9A25F !important;
+  }
+}
+
+    @page {
+      size: A2;
+      margin: 0;
+    }
+    :root {
+      --azul-oscuro: #152659;
+      --azul-muy-oscuro: #020E26;
+      --azul-profundo: #112140;
+      --amarillo-suave: #F2EC91;
+      --dorado: #D9A25F;
+      --beige: #F2E2CE;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: var(--beige);
+      line-height: 1.7;
+    }
+
+    .cv-wrapper {
+      display: flex;
+      max-width: 1100px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .left {
+      background: var(--azul-oscuro);
+      color: white;
+      padding: 50px 30px;
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .left img {
+      width: 180px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid var(--dorado);
+      margin-bottom: 30px;
+    }
+
+    .left h2 {
+      font-size: 22px;
+      margin: 0 0 10px 0;
+    }
+
+    .left p {
+      margin: 6px 0;
+      font-size: 15px;
+    }
+
+    .left .info {
+      margin: 30px 0;
+      width: 100%;
+    }
+
+    .info i {
+      width: 22px;
+    }
+
+    .info .row {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      font-size: 15px;
+    }
+
+    .section-title {
+      color: var(--azul-oscuro);
+      margin: 0 0 14px;
+      font-size: 20px;
+      font-weight: bold;
+      border-bottom: 2px solid var(--dorado);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .right {
+      padding: 50px 50px 100px 50px;
+      width: 65%;
+      background: white;
+      min-height: 1050px;
+    }
+
+    .right h1 {
+      font-size: 28px;
+      margin: 0;
+      color: var(--azul-oscuro);
+    }
+
+    .right .subtitle {
+      color: #666;
+      font-size: 16px;
+      margin-top: 8px;
+      margin-bottom: 25px;
+    }
+
+    .right p {
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    .skills, .tech-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+
+    .skills span {
+      background: var(--amarillo-suave);
+      color: #333;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.9em;
+    }
+
+    .year {
+      color: var(--azul-oscuro);
+      font-weight: bold;
+      margin-top: 25px;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .tech-icons i:hover {
+      transform: scale(1.1);
+    }
+
+    .tech-icons i {
+      font-size: 2rem;
+    }
+
+    a {
+      color: var(--dorado);
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .cv-wrapper {
+        flex-direction: column;
+      }
+      .left, .right {
+        width: 100%;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-wrapper">
+    <!-- IZQUIERDA -->
+    <div class="left">
+      <img src="./assets/img/MiPersona.png" alt="Jonathan García">
+      <h2>Jonathan David García</h2>
+      <p>Desarrollador Full Stack (18 años)</p>
+
+      <div class="info">
+        <div class="row"><i class="fas fa-envelope"></i> l10jonathang96@gmail.com</div>
+        <div class="row"><i class="fas fa-phone"></i> +502 5931 8205</div>
+        <div class="row"><i class="fab fa-github"></i>
+          <a href="https://github.com/JonathandGarciag" target="_blank" style="color: white;">/JonathandGarciag</a>
+        </div>
+      </div>
+
+      <section>
+        <p class="section-title" style="color: wheat;">Habilidades técnicas</p>
+        <ul>
+          <li>HTML5 - 80%</li>
+          <li>CSS3 - 80%</li>
+          <li>JavaScript - 65%</li>
+          <li>Java - 55%</li>
+          <li>Node.js - 65%</li>
+          <li>React - 70%</li>
+          <li>MongoDB - 60%</li>
+          <li>MySQL - 55%</li>
+          <li>JavaFX - 45%</li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="section-title" style="color: wheat;">Tecnologías usadas</p>
+        <div class="tech-icons">
+          <i class="fab fa-html5" style="color: #e34c26;"></i>
+          <i class="fab fa-css3-alt" style="color: #264de4;"></i>
+          <i class="fab fa-js-square" style="color: #f0db4f;"></i>
+          <i class="fab fa-react" style="color: #61dafb;"></i>
+          <i class="fab fa-node-js" style="color: #68a063;"></i>
+          <i class="fas fa-database" style="color: #6c757d;"></i>
+          <i class="fab fa-git-alt" style="color: #f1502f;"></i>
+          <i class="fab fa-java" style="color: #007396;"></i>
+        </div>
+      </section>
+
+      <p style="font-style: italic; margin-top: 40px;">"Con fe y esfuerzo, todo proyecto se alcanza; el Señor me guía y su paz me acompaña."</p>
+    </div>
+
+    <!-- DERECHA -->
+    <div class="right">
+      <h1>Jonathan David García Gutiérrez</h1>
+      <p class="subtitle">"El éxito es la suma de pequeños esfuerzos repetidos día tras día."</p>
+
+      <p><span class="section-title">Sobre mí</span></p>
+      <p>
+        Desarrollador backend en evolución a full stack. Experiencia en el desarrollo de aplicaciones web modernas utilizando tecnologías del lado del servidor y frontend. Apasionado por aprender nuevas herramientas y crear soluciones eficientes.
+      </p>
+
+      <section>
+        <p class="section-title">Formación</p>
+
+        <div class="year">2023</div>
+        <ul>
+          <li>Aprendizaje de Java con Base de datos MySQL</li>
+        </ul>
+
+        <div class="year">2024</div>
+        <ul>
+          <li>Herramientas: XAMPP, Tomcat, Postman, JavaFX, Git</li>
+          <li>Certificaciones en Platzi:
+            <ul>
+              <li>Java Básico</li>
+              <li>Java OOP</li>
+              <li>Persistencia con Java</li>
+              <li>Java y SQL</li>
+              <li>SQL y MySQL</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="year">2025</div>
+        <ul>
+          <li>JavaScript, Node.js, React</li>
+          <li>MongoDB y MongoDB Atlas</li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="section-title">Proyectos destacados</p>
+        <ul>
+          <li><strong>Social Blog:</strong> Blog social con secciones de publicaciones y comentarios. Tecnologías usadas: Node.js, React, MongoDB.</li>
+          <li><strong>TurboFix:</strong> Sistema de control de taller mecanico. Fue trabajado con java y javaFx.</li>
+          <li><strong>Almacenadora:</strong> Sistema administrativo de un almacenamiento. Incluye estadísticas.</li>
+          <li><strong>Bank Kova Capital:</strong> Plataforma de un banco. Uso de APIs y MongoDB Atlas.</li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="section-title">Certificaciones</p>
+        <ul>
+          <li><a href="https://www.dropbox.com/scl/fi/ymqbyqmxorpi70cs383ok/diploma-java-basico.pdf?rlkey=36mhxaj7j29r6unegou8xmrmp&dl=1" target="_blank">Diploma Java Básico</a></li>
+          <li><a href="https://www.dropbox.com/scl/fi/28cx9pdkhn0lmvqkly7aj/diploma-java-oop.pdf?rlkey=6y54fsl3wep75okhibkk7llo8&dl=1" target="_blank">Diploma Java OOP</a></li>
+          <li><a href="https://www.dropbox.com/scl/fi/ezzbyl2rivuptr5jrq0k2/diploma-java-persistencia.pdf?rlkey=zqxpwnsd0tjg9qd21ohl50cgh&dl=1" target="_blank">Diploma Persistencia con Java</a></li>
+          <li><a href="https://www.dropbox.com/scl/fi/5rmpama5cfrfsle1fohj2/diploma-java-sql.pdf?rlkey=yg5rftgchuyzu1ed0859vd58c&dl=1" target="_blank">Diploma Java y SQL</a></li>
+          <li><a href="https://www.dropbox.com/scl/fi/z71o2scqocadkimgh38cc/diploma-sql-mysql.pdf?rlkey=e7hqnro3xb2w6uzpgmgzznv7n&dl=1" target="_blank">Diploma SQL y MySQL</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+</body>
+</html>

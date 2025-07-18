@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="assets/css/content.css">
     <link rel="stylesheet" href="assets/css/sections.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <style>
+        body{margin:0;padding:0}h1{font-size:24px;color:white}
+    </style>
 </head>
 <body>
     <aside class="sidebar">
@@ -56,6 +59,7 @@
         </header>
         <main>
 
+            <br>
             <section class="hero" id="home">
                 <div class="hero-content">
                     <div class="hero-text">
@@ -66,20 +70,23 @@
                         </h3>
                         <p>"El éxito es la suma de pequeños esfuerzos repetidos día tras día." <span style="color: #aaa;">-Robert Collier</span></p>
                         <div class="hero-buttons">
-                            <a href="./assets/docs/CV.pdf" class="btn">Download CV</a>
+                            <a href="./assets/docs/CV - Jonathan García.pdf" class="btn" download>
+                                <i class="fas fa-download"></i> Download CV
+                            </a>
                             <a href="#certificate" class="btn secondary">View certificate</a>
                             <a href="#contact" class="btn secondary">Contact Me</a>
                         </div>
                     </div>
                 </div>
             </section>
-
+            <br>
+            <br>
 
             <section class="about" id="about">
                 <div class="about-container">
                     <div class="about-photo-wrapper">
                         <div class="photo-bg"></div>
-                        <img src="./assets/img/Profile.png" alt="Profile Photo">
+                        <img src="./assets/img/MiPersona.png" alt="Profile Photo">
                     </div>
                     <div class="about-text">
                         <h2>
@@ -195,6 +202,7 @@
 
             <br>
             <br>
+            <br>
 
             <section class="education" id="training">
                 <div class="education-header">
@@ -234,11 +242,10 @@
 
             <br>
             <br>
-            <br>
 
             <section class="view" id="viewer">
                 <div class="swiper viewer-swiper">
-                    <h1>Al darle click's a las imagenes se expandiran para mejor visualización</h1>
+                    <h1>Al darle click's a las imagenes se expandiran para mejor visualización al igual que en projects</h1>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="view-container">
@@ -314,80 +321,159 @@
 
             <br>
 
-              <section class="projects" id="projects">
+            <section class="projects" id="projects">
                 <h2>Projects</h2>
                 <div class="swiper-container projects-swiper">
-                  <div class="swiper-wrapper">
-              
-                    <!-- Proyecto 1 -->
-                    <div class="swiper-slide project-slide" data-images='["./assets/img/Profile.png", "./assets/img/Profile.png"]'>
-                      <div class="project-gallery-preview">
-                        <img class="main-img open-gallery" src="./assets/img/Profile.png" alt="Main Image">
-                        <div class="side-images">
-                          <img class="thumb-img open-gallery" src="./assets/img/Profile.png" alt="Thumb 1">
-                          <img class="thumb-img open-gallery" src="./assets/img/Profile.png" alt="Thumb 2">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide project-slide" 
+                        data-images='["./assets/img/SocialPost_Medial.png", "./assets/img/Comentario_Medial.png", "./assets/img/code/Filtro_Post_Social.png", "./assets/img/code/CrearComentario_Social.png"]'>
+                            <div class="project-content">
+                                <div class="project-gallery">
+                                    <div class="main-img-container">
+                                        <img class="main-img open-gallery" src="./assets/img/SocialPost_Medial.png" alt="Main Image">
+                                    </div>
+                                    <div class="side-images">
+                                        <img class="thumb-img open-gallery" src="./assets/img/code/Filtro_Post_Social.png" alt="Thumb 1">
+                                        <img class="thumb-img open-gallery" src="./assets/img/code/CrearComentario_Social.png" alt="Thumb 2">
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Social Blog</h3>
+                                    <p>Medio social donde puedes hacer publicaciones y comentar.</p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/JonathandGarciag/Social-medial" 
+                                            class="btn" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer">
+                                            <i class="fab fa-github"></i> Backend
+                                        </a>
+                                        <a href="https://github.com/JonathandGarciag/Social-Blog" 
+                                            class="btn" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer">
+                                            <i class="fab fa-github"></i> Frontend
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <h3>Project Title 1</h3>
-                      <div class="project-links">
-                        <a href="#" class="btn">GitHub</a>
-                        <a href="#" class="btn">Live Demo</a>
-                      </div>
+
+                        <div class="swiper-slide project-slide" 
+                        data-images='["./assets/img/TurboFix.png", "./assets/img/Login_TurboFix.png","./assets/img/Menu_TurboFix.png", "./assets/img/code/Empleado_TurboFix.png", "./assets/img/code/Vehiculo_TurboFix.png"]'>
+                            <div class="project-content">
+                                <div class="project-gallery">
+                                    <div class="main-img-container">
+                                        <img class="main-img open-gallery" src="./assets/img/TurboFix.png" alt="Main Image">
+                                    </div>
+                                    <div class="side-images">
+                                        <img class="thumb-img open-gallery" src="./assets/img/code/Empleado_TurboFix.png" alt="Thumb 1">
+                                        <img class="thumb-img open-gallery" src="./assets/img/code/Vehiculo_TurboFix.png" alt="Thumb 2">
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>TurboFix</h3>
+                                    <p>Sistema de control de taller mecanico.</p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/LordAlejandroCarrillo/TurboFix" 
+                                            class="btn" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer">
+                                            <i class="fab fa-github"></i> Link
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide project-slide" 
+                        data-images='["./assets/img/Login_Almacenadora.png", "./assets/img/Graficas_Almacenadora.png","./assets/img/Lista_Almacenadora.png", "./assets/img/code/Estadistic_Almacenadora.png", "./assets/img/code/Listar_Almacenadora.png"]'>
+                            <div class="project-content">
+                                <div class="project-gallery">
+                                    <div class="main-img-container">
+                                        <img class="main-img open-gallery" src="./assets/img/Login_Almacenadora.png" alt="Main Image">
+                                    </div>
+                                    <div class="side-images">
+                                        <img class="thumb-img open-gallery" src="./assets/img/code/Estadistic_Almacenadora.png" alt="Thumb 1">
+                                        <img class="thumb-img open-gallery" src="./assets/img/code/Listar_Almacenadora.png" alt="Thumb 2">
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Almacenadora</h3>
+                                    <p>Página donde administras una almacenadora desde dentro.</p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/KevinDGutierrez/Almacenadora_G1_Backend" 
+                                            class="btn" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer">
+                                            <i class="fab fa-github"></i> Backend
+                                        </a>
+                                        <a href="https://github.com/KevinDGutierrez/Almacenadora_G1_Frontend" 
+                                            class="btn" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer">
+                                            <i class="fab fa-github"></i> Frontend
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide project-slide" 
+                        data-images='["./assets/img/StartKova.png", "./assets/img/Moneda_Bank.png","./assets/img/Transferencias_Bank.png", "./assets/img/code/ApiMoneda_Kova.png", "./assets/img/code/Transferencia_Kova.png"]'>
+                            <div class="project-content">
+                                <div class="project-gallery">
+                                    <div class="main-img-container">
+                                        <img class="main-img open-gallery" src="./assets/img/StartKova.png" alt="Main Image">
+                                    </div>
+                                    <div class="side-images">
+                                        <img class="thumb-img open-gallery" src="./assets/img/code/ApiMoneda_Kova.png" alt="Thumb 1">
+                                        <img class="thumb-img open-gallery" src="./assets/img/code/Transferencia_Kova.png" alt="Thumb 2">
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Bank Kova Capital</h3>
+                                    <p>Imitación de un banco, usando api's de conversión.</p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/JonathandGarciag/BankCapital-Kova-Backend" 
+                                            class="btn" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer">
+                                            <i class="fab fa-github"></i> Backend
+                                        </a>
+                                        <a href="https://github.com/JonathandGarciag/BankCapital-Kova-Frontend" 
+                                            class="btn" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer">
+                                            <i class="fab fa-github"></i> Frontend
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <div class="swiper-slide project-slide" data-images='["./assets/img/Profile.png", "./assets/img/Profile.png"]'>
-                        <div class="project-gallery-preview">
-                          <img class="main-img open-gallery" src="./assets/img/Profile.png" alt="Main Image">
-                          <div class="side-images">
-                            <img class="thumb-img open-gallery" src="./assets/img/Profile.png" alt="Thumb 1">
-                            <img class="thumb-img open-gallery" src="./assets/img/Profile.png" alt="Thumb 2">
-                          </div>
-                        </div>
-                        <h3>Project Title 1</h3>
-                        <div class="project-links">
-                          <a href="#" class="btn">GitHub</a>
-                          <a href="#" class="btn">Live Demo</a>
-                        </div>
-                      </div>
-              
-                    <!-- Puedes duplicar este bloque para más proyectos -->
-              
-                  </div>
-              
-                  <div class="swiper-button-prev"></div>
-                  <div class="swiper-button-next"></div>
-                  <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
-              </section>
-              
-              <!-- GALERÍA MODAL -->
-              <div id="gallery-modal" class="modal">
-                <span class="modal-close">&times;</span>
+            </section>
+
+            <div id="modal-view" class="modal modal-view">
+                <span class="modal-close close-view">&times;</span>
                 <div class="modal-content">
-                  <img id="modal-main-img" src="" alt="Main Gallery">
-                  <div id="modal-thumbnails" class="thumbnails"></div>
+                    <img id="modal-main-img-view" src="" alt="Imagen View" />
                 </div>
-              </div>
+            </div>
 
-              <div class="swiper projects-swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <!-- tu contenido de proyecto 1 -->
-                  </div>
-                  <div class="swiper-slide">
-                    <!-- tu contenido de proyecto 2 -->
-                  </div>
-                  <!-- etc... -->
+            <div id="modal-project" class="modal modal-project">
+                <span class="modal-close close-project">&times;</span>
+                <div class="modal-content">
+                    <img id="modal-main-img-project" src="" alt="Imagen Project" />
+                    <div id="modal-thumbnails" class="thumbnails"></div>
                 </div>
-              
-                <!-- Navegació n -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-              </div>
-              
-              
-              
+            </div>
+
 
             <section class="certificates" id="certificate">
                 <h2>Mis Certificados</h2>
@@ -436,11 +522,28 @@
             <p>&copy; 2025 Jonathan García. Todos los derechos reservados.</p>
         </footer>
     </div>
-  
+
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        document.addEventListener('keydown', e => {
+            if (
+            e.key === 'F12' ||
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+            (e.ctrlKey && e.key === 'U')
+            ) {
+            e.preventDefault();
+            }
+        });
+
+        var _0xabc1=["\x48\x6F\x6C\x61\x20\x6D\x75\x6E\x64\x6F"];console["\x6C\x6F\x67"](_0xabc1[0]);
+    </script>
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/slider.js"></script>
 </body>
 </html>

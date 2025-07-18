@@ -1,4 +1,4 @@
-// Nav active link on scroll
+// Nav active 
 const sections = document.querySelectorAll("main section");
 const navLinks = document.querySelectorAll("header nav a");
 
@@ -70,90 +70,6 @@ tabButtons.forEach(button => {
   });
 });
 
-
-//Carrusel
-var viewerSwiper = new Swiper(".viewer-swiper", {
-  slidesPerView: 2,
-  slidesPerGroup: 2,
-  spaceBetween: 20,
-  loop: true,
-  centeredSlides: false,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-  navigation: {
-    nextEl: ".viewer-swiper .swiper-button-next",
-    prevEl: ".viewer-swiper .swiper-button-prev",
-  },
-  pagination: {
-    el: ".viewer-swiper .swiper-pagination",
-    clickable: true,
-  },
-});
-
-mediumZoom('.viewer-swiper .profile-image', {
-  margin: 24,
-  background: '#000',
-  scrollOffset: 0
-});
-
-
-// Carrusel Projects (puedes ajustar como desees)
-const projectsSwiper = new Swiper(".projects-swiper", {
-  slidesPerView: 1,              // 👈 SOLO UNO visible
-  spaceBetween: 40,
-  loop: true,
-  centeredSlides: true,          // opcional: centra el slide
-  navigation: {
-    nextEl: ".projects-swiper .swiper-button-next",
-    prevEl: ".projects-swiper .swiper-button-prev"
-  },
-  pagination: {
-    el: ".projects-swiper .swiper-pagination",
-    clickable: true
-  }
-});
-
-// Galería modal
-const modal = document.getElementById("gallery-modal");
-const modalMainImg = document.getElementById("modal-main-img");
-const modalThumbnails = document.getElementById("modal-thumbnails");
-const modalClose = document.querySelector(".modal-close");
-
-// Abrir galería al hacer clic en cualquier imagen
-document.querySelectorAll(".open-gallery").forEach(img => {
-  img.addEventListener("click", () => {
-    const slide = img.closest(".project-slide");
-    const images = JSON.parse(slide.dataset.images);
-    modalMainImg.src = images[0]; // Mostrar primera como principal
-
-    // Limpiar thumbnails anteriores
-    modalThumbnails.innerHTML = "";
-
-    images.forEach(src => {
-      const thumb = document.createElement("img");
-      thumb.src = src;
-      thumb.addEventListener("click", () => {
-        modalMainImg.src = src;
-      });
-      modalThumbnails.appendChild(thumb);
-    });
-
-    modal.style.display = "block";
-  });
-});
-
-// Cerrar modal
-modalClose.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-});
-
 // Formulario para contactar email
 (function(){
     emailjs.init("gmmCbinVp-H8S3aJB");
@@ -172,4 +88,14 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     }
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 });
