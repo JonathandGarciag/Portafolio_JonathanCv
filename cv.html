@@ -1,314 +1,344 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CV - Jonathan García</title>
+  <title>CV - Jonathan David García</title>
+
+  <!-- Tipografía -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    @media print {
-  body {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  .cv-wrapper {
-    box-shadow: none !important;
-  }
-
-  .left {
-    background-color: #152659 !important;
-    color: white !important;
-  }
-
-  .right {
-    background-color: white !important;
-    color: black !important;
-  }
-
-  .skills span {
-    background: #F2EC91 !important;
-  }
-
-  a {
-    color: #D9A25F !important;
-  }
+/* Fallback: mismos ajustes clave, por si el archivo externo no se aplica al imprimir */
+@media print {
+  @page { size: A4; margin: 10mm; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { background:#fff !important; }
+  .cv{ box-shadow:none!important; border-radius:0!important; margin:0!important; min-height:auto!important; }
+  .aside{ position:static!important; height:auto!important; overflow:visible!important; }
+  .section, .xp-item, .cert-card, .edu-item { break-inside:avoid; page-break-inside:avoid; }
+  .qr-box{ display:none!important; }
+  :root { --print-scale: 0.86; }
+  .cv{ transform:scale(var(--print-scale)); transform-origin:top left; width:calc(210mm / var(--print-scale)); }
+  .main, .aside { padding:20px!important; } .section { margin-top:14px!important; }
+  .xp-item { padding:8px 10px!important; } .cert-card { padding:6px 8px!important; }
 }
+</style>
 
-    @page {
-      size: A2;
-      margin: 0;
-    }
-    :root {
-      --azul-oscuro: #152659;
-      --azul-muy-oscuro: #020E26;
-      --azul-profundo: #112140;
-      --amarillo-suave: #F2EC91;
-      --dorado: #D9A25F;
-      --beige: #F2E2CE;
-    }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: var(--beige);
-      line-height: 1.7;
-    }
 
-    .cv-wrapper {
-      display: flex;
-      max-width: 1100px;
-      margin: 50px auto;
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .left {
-      background: var(--azul-oscuro);
-      color: white;
-      padding: 50px 30px;
-      width: 35%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .left img {
-      width: 180px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 3px solid var(--dorado);
-      margin-bottom: 30px;
-    }
-
-    .left h2 {
-      font-size: 22px;
-      margin: 0 0 10px 0;
-    }
-
-    .left p {
-      margin: 6px 0;
-      font-size: 15px;
-    }
-
-    .left .info {
-      margin: 30px 0;
-      width: 100%;
-    }
-
-    .info i {
-      width: 22px;
-    }
-
-    .info .row {
-      display: flex;
-      align-items: center;
-      margin: 10px 0;
-      font-size: 15px;
-    }
-
-    .section-title {
-      color: var(--azul-oscuro);
-      margin: 0 0 14px;
-      font-size: 20px;
-      font-weight: bold;
-      border-bottom: 2px solid var(--dorado);
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .right {
-      padding: 50px 50px 100px 50px;
-      width: 65%;
-      background: white;
-      min-height: 1050px;
-    }
-
-    .right h1 {
-      font-size: 28px;
-      margin: 0;
-      color: var(--azul-oscuro);
-    }
-
-    .right .subtitle {
-      color: #666;
-      font-size: 16px;
-      margin-top: 8px;
-      margin-bottom: 25px;
-    }
-
-    .right p {
-      font-size: 15px;
-      color: #333;
-      margin-bottom: 16px;
-    }
-
-    .skills, .tech-icons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 15px;
-      margin-bottom: 30px;
-    }
-
-    .skills span {
-      background: var(--amarillo-suave);
-      color: #333;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 0.9em;
-    }
-
-    .year {
-      color: var(--azul-oscuro);
-      font-weight: bold;
-      margin-top: 25px;
-      margin-bottom: 8px;
-      font-size: 16px;
-    }
-
-    ul {
-      padding-left: 22px;
-      margin-top: 0;
-      margin-bottom: 20px;
-    }
-
-    .tech-icons i:hover {
-      transform: scale(1.1);
-    }
-
-    .tech-icons i {
-      font-size: 2rem;
-    }
-
-    a {
-      color: var(--dorado);
-      text-decoration: none;
-    }
-
-    @media screen and (max-width: 768px) {
-      .cv-wrapper {
-        flex-direction: column;
-      }
-      .left, .right {
-        width: 100%;
-        padding: 30px;
-      }
-    }
-  </style>
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./assets/css/cv.css" media="all"/>
 </head>
 <body>
-  <div class="cv-wrapper">
-    <!-- IZQUIERDA -->
-    <div class="left">
-      <img src="./assets/img/MiPersona.png" alt="Jonathan García">
-      <h2>Jonathan David García</h2>
-      <p>Desarrollador Full Stack (18 años)</p>
+  <article class="cv">
+    <!-- Lateral -->
+    <aside class="aside">
+      <img src="./assets/img/MiPersonaSonrisaCortada.png" alt="Jonathan García" class="portrait"/>
 
-      <div class="info">
-        <div class="row"><i class="fas fa-envelope"></i> l10jonathang96@gmail.com</div>
-        <div class="row"><i class="fas fa-phone"></i> +502 5931 8205</div>
-        <div class="row"><i class="fab fa-github"></i>
-          <a href="https://github.com/JonathandGarciag" target="_blank" style="color: white;">/JonathandGarciag</a>
+      <h2>Jonathan David García</h2>
+      <p class="role">Desarrollador Full Stack (18 años)</p>
+
+      <section class="block">
+        <h3 class="block-title">Contacto</h3>
+        <div class="info-row"><i class="fa-solid fa-envelope"></i> l10jonathang96@gmail.com</div>
+        <div class="info-row"><i class="fa-solid fa-phone"></i> +502 5931 8205</div>
+        <div class="info-row"><i class="fa-brands fa-github"></i>
+          <a href="https://github.com/JonathandGarciag" target="_blank" rel="noopener">/JonathandGarciag</a>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="block-title">Habilidades técnicas</h3>
+        <div class="skill-list">
+          <span class="skill">HTML5 • 80%</span>
+          <span class="skill">CSS3 • 80%</span>
+          <span class="skill">JavaScript • 65%</span>
+          <span class="skill">Java • 55%</span>
+          <span class="skill">Node.js • 65%</span>
+          <span class="skill">React • 70%</span>
+          <span class="skill">MongoDB • 60%</span>
+          <span class="skill">MySQL • 55%</span>
+          <span class="skill">JavaFX • 45%</span>
+          <span class="skill">PHP • 60%</span>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="block-title">Tecnologías</h3>
+        <div class="tech-grid" aria-label="Tecnologías">
+          <i class="fa-brands fa-html5"  title="HTML5"  style="color:#e34c26"></i>
+          <i class="fa-brands fa-css3-alt" title="CSS3"   style="color:#264de4"></i>
+          <i class="fa-brands fa-js"      title="JavaScript" style="color:#f0db4f"></i>
+          <i class="fa-brands fa-react"   title="React"   style="color:#61dafb"></i>
+          <i class="fa-brands fa-node-js" title="Node.js" style="color:#68a063"></i>
+          <i class="fa-solid fa-database" title="DB"      style="color:#6c757d"></i>
+          <i class="fa-brands fa-git-alt" title="Git"     style="color:#f1502f"></i>
+          <i class="fa-brands fa-java"    title="Java"    style="color:#007396"></i>
+          <i class="fa-brands fa-php"     title="PHP" style="color:#f1502f"></i>
+        </div>
+      </section>
+
+      <section class="block qr-box">
+        <h3 class="block-title">Portafolio</h3>
+        <img src="./assets/img/Portafolio.png" alt="QR a portafolio" class="qr-img">
+        <div class="qr-caption">Escanéame para ver mi portafolio / GitHub</div>
+      </section>
+
+      <section class="block">
+        <h3 class="block-title">Disponibilidad</h3>
+        <ul class="mini-list">
+          <li><strong>Modalidad:</strong> Remoto / Híbrido</li>
+          <li><strong>Horario:</strong> Medio tiempo / Tiempo completo</li>
+          <li><strong>Ubicación:</strong> Ciudad de Guatemala</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <h3 class="block-title">Idiomas</h3>
+        <ul class="mini-list">
+          <li>Español — Nativo</li>
+          <li>Inglés — B1–B2 (lectura técnica)</li>
+        </ul>
+      </section>
+
+    </aside>
+
+    <!-- Principal -->
+    <main class="main">
+      <header class="header">
+        <div>
+          <h1 class="name">Jonathan David García Gutiérrez</h1>
+          <p class="tagline">Desarrollador en formación con foco en backend y proyección full stack. Me gusta diseñar soluciones limpias y eficientes.</p>
+        </div>
+      </header>
+
+      <!-- EXPERIENCIA -->
+      <section class="section">
+        <h3 class="section-title">Experiencia</h3>
+        <div class="xp">
+          <article class="xp-item">
+            <div class="xp-head">
+              <div class="xp-role">Prácticas profesionales — Tribal Worldwide Guatemala</div>
+              <div class="xp-meta">400 horas · 2025 Agosto-Octubre · Virtual</div>
+            </div>
+            <ul>
+              <li>Onboarding y herramientas: <strong>Clockify</strong>, <strong>Jira</strong>, <strong>Discord</strong>; lectura de <em>Documentación HU &amp; PR’s</em> e <em>Inducción Backend Devs</em>.</li>
+              <li>Estudio y uso de <strong>PHP</strong> y <strong>Laravel</strong> para tareas de backend.</li>
+              <li>Entorno de trabajo con <strong>Ubuntu</strong> y <strong>Docker</strong>; configuración local de proyectos, repos y flujos de commits/PRs.</li>
+              <li>Participación en repositorios del proyecto y despliegue de cambios verificables.</li>
+              <li>Actividades on-site (dos visitas) y coordinación virtual diaria.</li>
+              <li>Resolución de ejercicios de <strong>algoritmos</strong> y evaluación técnica; investigación sobre <strong>gestión de estado</strong> para mejorar la arquitectura.</li>
+            </ul>
+            <div class="pills">
+              <span class="pill">PHP</span><span class="pill">Laravel</span>
+              <span class="pill">Docker</span><span class="pill">Ubuntu</span>
+              <span class="pill">Git/GitHub</span><span class="pill">Jira</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- EDUCACIÓN -->
+      <section class="section">
+        <h3 class="section-title">Educación</h3>
+        <p><strong>Fundación Kinal</strong> — Perito en Informática (Diversificado).</p>
+        <div class="edu">
+          <div class="edu-item">
+            <div class="edu-year">2023</div>
+            <p class="edu-detail">Inicio en programación con <strong>Java</strong> y fundamentos de <strong>MySQL</strong>.</p>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2024</div>
+            <div>
+              <p class="edu-detail">Herramientas: <strong>XAMPP</strong>, <strong>Tomcat</strong>, <strong>Postman</strong>, <strong>JavaFX</strong>, <strong>Git</strong>.</p>
+              <p class="edu-detail">Certificaciones Platzi:
+                <span class="badge">Java Básico</span>
+                <span class="badge">Java OOP</span>
+                <span class="badge">Persistencia con Java</span>
+                <span class="badge">Java y SQL</span>
+                <span class="badge">SQL y MySQL</span>
+              </p>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2025</div>
+            <p class="edu-detail">Ecosistema JavaScript: <strong>Node.js</strong> (backend), <strong>React</strong> (frontend) y <strong>MongoDB/MongoDB Atlas</strong>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- APRENDIZAJES RECIENTES -->
+      <section class="section">
+        <h3 class="section-title">Aprendizajes & Logros recientes</h3>
+        <ul>
+          <li>Despliegues y entorno: configuración con <strong>Ubuntu</strong>, <strong>Docker</strong> y <strong>MongoDB Atlas</strong>.</li>
+          <li>Pruebas y APIs: uso de <strong>Postman</strong>, servicios REST y control de versiones con <strong>Git</strong>.</li>
+          <li>Frontend/Backend: consolidación con <strong>React</strong>, <strong>Node.js</strong> y <strong>JavaFX</strong> en proyectos académicos y personales.</li>
+        </ul>
+      </section>
+
+      <!-- PROYECTOS -->
+      <section class="section">
+        <h3 class="section-title">Proyectos destacados</h3>
+        <ul class="project-list">
+          <li><strong>Social Blog</strong>: blog social con publicaciones y comentarios <span class="badge">Node.js</span><span class="badge">React</span><span class="badge">MongoDB</span></li>
+          <li><strong>TurboFix</strong>: sistema de control de taller mecánico <span class="badge">Java</span><span class="badge">JavaFX</span></li>
+          <li><strong>Almacenadora</strong>: sistema administrativo con estadísticas <span class="badge">Web App</span></li>
+          <li><strong>Bank Kova Capital</strong>: plataforma bancaria con APIs y MongoDB Atlas <span class="badge">APIs</span><span class="badge">Mongo Atlas</span></li>
+        </ul>
+      </section>
+
+      <!-- CERTIFICACIONES -->
+      <section class="section">
+  <h3 class="section-title">Certificaciones</h3>
+
+  <div class="cert-grid">
+    <article class="cert-card">
+      <div class="cert-meta">
+        <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-text">
+          <p class="cert-title">Java Básico</p>
+          <p class="cert-sub">Platzi · 2024</p>
         </div>
       </div>
+    </article>
 
-      <section>
-        <p class="section-title" style="color: wheat;">Habilidades técnicas</p>
-        <ul>
-          <li>HTML5 - 80%</li>
-          <li>CSS3 - 80%</li>
-          <li>JavaScript - 65%</li>
-          <li>Java - 55%</li>
-          <li>Node.js - 65%</li>
-          <li>React - 70%</li>
-          <li>MongoDB - 60%</li>
-          <li>MySQL - 55%</li>
-          <li>JavaFX - 45%</li>
-        </ul>
-      </section>
-
-      <section>
-        <p class="section-title" style="color: wheat;">Tecnologías usadas</p>
-        <div class="tech-icons">
-          <i class="fab fa-html5" style="color: #e34c26;"></i>
-          <i class="fab fa-css3-alt" style="color: #264de4;"></i>
-          <i class="fab fa-js-square" style="color: #f0db4f;"></i>
-          <i class="fab fa-react" style="color: #61dafb;"></i>
-          <i class="fab fa-node-js" style="color: #68a063;"></i>
-          <i class="fas fa-database" style="color: #6c757d;"></i>
-          <i class="fab fa-git-alt" style="color: #f1502f;"></i>
-          <i class="fab fa-java" style="color: #007396;"></i>
+    <article class="cert-card">
+      <div class="cert-meta">
+        <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-text">
+          <p class="cert-title">Java OOP</p>
+          <p class="cert-sub">Platzi · 2024</p>
         </div>
-      </section>
+      </div>
+    </article>
 
-      <p style="font-style: italic; margin-top: 40px;">"Con fe y esfuerzo, todo proyecto se alcanza; el Señor me guía y su paz me acompaña."</p>
-    </div>
+    <article class="cert-card">
+      <div class="cert-meta">
+        <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-text">
+          <p class="cert-title">Persistencia con Java</p>
+          <p class="cert-sub">Platzi · 2024</p>
+        </div>
+      </div>
+    </article>
 
-    <!-- DERECHA -->
-    <div class="right">
-      <h1>Jonathan David García Gutiérrez</h1>
-      <p class="subtitle">"El éxito es la suma de pequeños esfuerzos repetidos día tras día."</p>
+    <article class="cert-card">
+      <div class="cert-meta">
+        <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-text">
+          <p class="cert-title">Java y SQL</p>
+          <p class="cert-sub">Platzi · 2024</p>
+        </div>
+      </div>
+    </article>
 
-      <p><span class="section-title">Sobre mí</span></p>
-      <p>
-        Desarrollador backend en evolución a full stack. Experiencia en el desarrollo de aplicaciones web modernas utilizando tecnologías del lado del servidor y frontend. Apasionado por aprender nuevas herramientas y crear soluciones eficientes.
-      </p>
-
-      <section>
-        <p class="section-title">Formación</p>
-
-        <div class="year">2023</div>
-        <ul>
-          <li>Aprendizaje de Java con Base de datos MySQL</li>
-        </ul>
-
-        <div class="year">2024</div>
-        <ul>
-          <li>Herramientas: XAMPP, Tomcat, Postman, JavaFX, Git</li>
-          <li>Certificaciones en Platzi:
-            <ul>
-              <li>Java Básico</li>
-              <li>Java OOP</li>
-              <li>Persistencia con Java</li>
-              <li>Java y SQL</li>
-              <li>SQL y MySQL</li>
-            </ul>
-          </li>
-        </ul>
-
-        <div class="year">2025</div>
-        <ul>
-          <li>JavaScript, Node.js, React</li>
-          <li>MongoDB y MongoDB Atlas</li>
-        </ul>
-      </section>
-
-      <section>
-        <p class="section-title">Proyectos destacados</p>
-        <ul>
-          <li><strong>Social Blog:</strong> Blog social con secciones de publicaciones y comentarios. Tecnologías usadas: Node.js, React, MongoDB.</li>
-          <li><strong>TurboFix:</strong> Sistema de control de taller mecanico. Fue trabajado con java y javaFx.</li>
-          <li><strong>Almacenadora:</strong> Sistema administrativo de un almacenamiento. Incluye estadísticas.</li>
-          <li><strong>Bank Kova Capital:</strong> Plataforma de un banco. Uso de APIs y MongoDB Atlas.</li>
-        </ul>
-      </section>
-
-      <section>
-        <p class="section-title">Certificaciones</p>
-        <ul>
-          <li><a href="https://www.dropbox.com/scl/fi/ymqbyqmxorpi70cs383ok/diploma-java-basico.pdf?rlkey=36mhxaj7j29r6unegou8xmrmp&dl=1" target="_blank">Diploma Java Básico</a></li>
-          <li><a href="https://www.dropbox.com/scl/fi/28cx9pdkhn0lmvqkly7aj/diploma-java-oop.pdf?rlkey=6y54fsl3wep75okhibkk7llo8&dl=1" target="_blank">Diploma Java OOP</a></li>
-          <li><a href="https://www.dropbox.com/scl/fi/ezzbyl2rivuptr5jrq0k2/diploma-java-persistencia.pdf?rlkey=zqxpwnsd0tjg9qd21ohl50cgh&dl=1" target="_blank">Diploma Persistencia con Java</a></li>
-          <li><a href="https://www.dropbox.com/scl/fi/5rmpama5cfrfsle1fohj2/diploma-java-sql.pdf?rlkey=yg5rftgchuyzu1ed0859vd58c&dl=1" target="_blank">Diploma Java y SQL</a></li>
-          <li><a href="https://www.dropbox.com/scl/fi/z71o2scqocadkimgh38cc/diploma-sql-mysql.pdf?rlkey=e7hqnro3xb2w6uzpgmgzznv7n&dl=1" target="_blank">Diploma SQL y MySQL</a></li>
-        </ul>
-      </section>
-
-    </div>
+    <article class="cert-card">
+      <div class="cert-meta">
+        <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-text">
+          <p class="cert-title">SQL y MySQL</p>
+          <p class="cert-sub">Platzi · 2024</p>
+        </div>
+      </div>
+    </article>
   </div>
+</section>
+
+
+    </main>
+  </article>
+
+  <!-- Botón (se oculta al imprimir) -->
+<button id="btnExport" onclick="exportCVToPDF()" style="position:fixed;right:16px;bottom:16px;z-index:9999;padding:10px 14px;border:1px solid #cbd5e1;border-radius:10px;background:#ffffffcc;backdrop-filter:blur(6px);cursor:pointer">Exportar a PDF</button>
+
+<!-- Librerías CDN -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+<script>
+async function exportCVToPDF() {
+  const { jsPDF } = window.jspdf;
+
+  // 1) Selecciona el nodo a exportar (tu contenedor principal)
+  const node = document.querySelector('.cv');
+
+  // 2) Captura como imagen con alta resolución
+  const canvas = await html2canvas(node, {
+    scale: 2,               // más nítido
+    useCORS: true,
+    backgroundColor: null   // respeta tu fondo
+  });
+  const imgData = canvas.toDataURL('image/png');
+
+  // 3) Define PDF A4
+  const pdf = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
+  const pageWidth = 210;
+  const pageHeight = 297;
+
+  // 4) Calcula tamaño de la imagen para AJUSTAR A UNA SOLA HOJA
+  const pxToMm = (px) => px * 25.4 / 96; // 96dpi → mm aprox.
+  const imgWidthMm  = pxToMm(canvas.width);
+  const imgHeightMm = pxToMm(canvas.height);
+
+  // Escala proporcional para encajar en A4 (ancho o alto, el que limite)
+  const scale = Math.min(pageWidth / imgWidthMm, pageHeight / imgHeightMm);
+
+  const renderWidth  = imgWidthMm * scale;
+  const renderHeight = imgHeightMm * scale;
+
+  const marginX = (pageWidth  - renderWidth)  / 2;
+  const marginY = (pageHeight - renderHeight) / 2;
+
+  // 5) Inserta la imagen y guarda
+  pdf.addImage(imgData, 'PNG', marginX, marginY, renderWidth, renderHeight);
+  pdf.save('CV_Jonathan_Garcia.pdf');
+}
+
+async function exportCVToPDF() {
+  const { jsPDF } = window.jspdf;
+  const node = document.querySelector('.cv');
+
+  const canvas = await html2canvas(node, {
+    scale: 2,
+    useCORS: true,
+    backgroundColor: '#ffffff'   // fondo real blanco
+  });
+  const imgData = canvas.toDataURL('image/png');
+
+  const pdf = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
+  const pageWidth = 210, pageHeight = 297;
+
+  // Tamaños de la captura en mm (aprox 96dpi)
+  const pxToMm = px => px * 25.4 / 96;
+  const imgW = pxToMm(canvas.width);
+  const imgH = pxToMm(canvas.height);
+
+  // Llenar ANCHO de la hoja sin márgenes
+  const scaleByWidth = pageWidth / imgW;
+  let renderW = pageWidth;
+  let renderH = imgH * scaleByWidth;
+
+  // Si al llenar ancho se pasa de alto, entonces llenamos alto
+  if (renderH > pageHeight) {
+    const scaleByHeight = pageHeight / imgH;
+    renderH = pageHeight;
+    renderW = imgW * scaleByHeight;
+  }
+
+  const marginX = 0;                          // ← sin margen lateral (lateral pega al borde)
+  const marginY = (pageHeight - renderH) / 2; // centrado vertical si sobra alto (puedes poner 0)
+
+  pdf.addImage(imgData, 'PNG', marginX, marginY, renderW, renderH);
+  pdf.save('CV_Jonathan_Garcia.pdf');
+}
+
+</script>
+
+
 </body>
 </html>

@@ -513,3 +513,31 @@ img:focus {
   outline: none !important;
   box-shadow: none !important;
 }
+
+/*Training*/
+.education-header{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.education-header h2{
+  grid-column: 1;
+  margin: 0;              
+  line-height: 1.1;
+}
+
+.education-subtitle{
+  grid-column: 1;
+  margin: 2px 0 0 2px;    
+  font-size: 1rem;         
+  line-height: 1.15;
+  font-weight: 600;        
+  color: #4b5563;          
+}
+
+
+.education-tabs{
+  grid-column: 3;
+  justify-self: end;
+}
