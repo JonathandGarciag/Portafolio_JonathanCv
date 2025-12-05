@@ -28,10 +28,15 @@
 }
 </style>
 
-
-
   <!-- Estilos -->
   <link rel="stylesheet" href="./assets/css/cv.css" media="all"/>
+
+  <!-- ✅ Forzar bordes cuadrados en la hoja (pantalla + PDF) -->
+  <style>
+    .cv {
+      border-radius: 0 !important;
+    }
+  </style>
 </head>
 <body>
   <article class="cv">
@@ -54,16 +59,16 @@
       <section class="block">
         <h3 class="block-title">Habilidades técnicas</h3>
         <div class="skill-list">
-          <span class="skill">HTML5 • 80%</span>
-          <span class="skill">CSS3 • 80%</span>
-          <span class="skill">JavaScript • 65%</span>
-          <span class="skill">Java • 55%</span>
-          <span class="skill">Node.js • 65%</span>
-          <span class="skill">React • 70%</span>
-          <span class="skill">MongoDB • 60%</span>
-          <span class="skill">MySQL • 55%</span>
-          <span class="skill">JavaFX • 45%</span>
-          <span class="skill">PHP • 60%</span>
+          <span class="skill">HTML5</span>
+          <span class="skill">CSS3</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Java</span>
+          <span class="skill">Node.js</span>
+          <span class="skill">React</span>
+          <span class="skill">MongoDB</span>
+          <span class="skill">MySQL</span>
+          <span class="skill">JavaFX</span>
+          <span class="skill">PHP</span>
         </div>
       </section>
 
@@ -91,7 +96,7 @@
       <section class="block">
         <h3 class="block-title">Disponibilidad</h3>
         <ul class="mini-list">
-          <li><strong>Modalidad:</strong> Remoto / Híbrido</li>
+          <li><strong>Modalidad:</strong> Presencial / Remoto / Híbrido</li>
           <li><strong>Horario:</strong> Medio tiempo / Tiempo completo</li>
           <li><strong>Ubicación:</strong> Ciudad de Guatemala</li>
         </ul>
@@ -126,12 +131,12 @@
               <div class="xp-meta">400 horas · 2025 Agosto-Octubre · Virtual</div>
             </div>
             <ul>
-              <li>Onboarding y herramientas: <strong>Clockify</strong>, <strong>Jira</strong>, <strong>Discord</strong>; lectura de <em>Documentación HU &amp; PR’s</em> e <em>Inducción Backend Devs</em>.</li>
-              <li>Estudio y uso de <strong>PHP</strong> y <strong>Laravel</strong> para tareas de backend.</li>
+              <li>Resolución de ejercicios de <strong>algoritmos</strong> y evaluación técnica; investigación sobre <strong>gestión de estado</strong> para mejorar la arquitectura.</li>
+              <li>Onboarding y herramientas: <strong>Clockify</strong>, <strong>Jira</strong>, <strong>Discord</strong>; capacitación de <em>Documentación HU &amp; PR’s</em> e <em>Inducción Backend Devs</em>.</li>
+              <li>Practica e implementación de <strong>PHP</strong> y <strong>Laravel</strong> para tareas de backend.</li>
               <li>Entorno de trabajo con <strong>Ubuntu</strong> y <strong>Docker</strong>; configuración local de proyectos, repos y flujos de commits/PRs.</li>
               <li>Participación en repositorios del proyecto y despliegue de cambios verificables.</li>
               <li>Actividades on-site (dos visitas) y coordinación virtual diaria.</li>
-              <li>Resolución de ejercicios de <strong>algoritmos</strong> y evaluación técnica; investigación sobre <strong>gestión de estado</strong> para mejorar la arquitectura.</li>
             </ul>
             <div class="pills">
               <span class="pill">PHP</span><span class="pill">Laravel</span>
@@ -256,7 +261,6 @@
   <!-- Botón (se oculta al imprimir) -->
 <button id="btnExport" onclick="exportCVToPDF()" style="position:fixed;right:16px;bottom:16px;z-index:9999;padding:10px 14px;border:1px solid #cbd5e1;border-radius:10px;background:#ffffffcc;backdrop-filter:blur(6px);cursor:pointer">Exportar a PDF</button>
 
-<!-- Librerías CDN -->
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 
@@ -264,28 +268,23 @@
 async function exportCVToPDF() {
   const { jsPDF } = window.jspdf;
 
-  // 1) Selecciona el nodo a exportar (tu contenedor principal)
   const node = document.querySelector('.cv');
 
-  // 2) Captura como imagen con alta resolución
   const canvas = await html2canvas(node, {
-    scale: 2,               // más nítido
+    scale: 2,             
     useCORS: true,
-    backgroundColor: null   // respeta tu fondo
+    backgroundColor: null   
   });
   const imgData = canvas.toDataURL('image/png');
 
-  // 3) Define PDF A4
   const pdf = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
   const pageWidth = 210;
   const pageHeight = 297;
 
-  // 4) Calcula tamaño de la imagen para AJUSTAR A UNA SOLA HOJA
-  const pxToMm = (px) => px * 25.4 / 96; // 96dpi → mm aprox.
+  const pxToMm = (px) => px * 25.4 / 96;
   const imgWidthMm  = pxToMm(canvas.width);
   const imgHeightMm = pxToMm(canvas.height);
 
-  // Escala proporcional para encajar en A4 (ancho o alto, el que limite)
   const scale = Math.min(pageWidth / imgWidthMm, pageHeight / imgHeightMm);
 
   const renderWidth  = imgWidthMm * scale;
@@ -294,7 +293,6 @@ async function exportCVToPDF() {
   const marginX = (pageWidth  - renderWidth)  / 2;
   const marginY = (pageHeight - renderHeight) / 2;
 
-  // 5) Inserta la imagen y guarda
   pdf.addImage(imgData, 'PNG', marginX, marginY, renderWidth, renderHeight);
   pdf.save('CV_Jonathan_Garcia.pdf');
 }
@@ -306,32 +304,29 @@ async function exportCVToPDF() {
   const canvas = await html2canvas(node, {
     scale: 2,
     useCORS: true,
-    backgroundColor: '#ffffff'   // fondo real blanco
+    backgroundColor: '#ffffff'   
   });
   const imgData = canvas.toDataURL('image/png');
 
   const pdf = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
   const pageWidth = 210, pageHeight = 297;
 
-  // Tamaños de la captura en mm (aprox 96dpi)
   const pxToMm = px => px * 25.4 / 96;
   const imgW = pxToMm(canvas.width);
   const imgH = pxToMm(canvas.height);
 
-  // Llenar ANCHO de la hoja sin márgenes
   const scaleByWidth = pageWidth / imgW;
   let renderW = pageWidth;
   let renderH = imgH * scaleByWidth;
 
-  // Si al llenar ancho se pasa de alto, entonces llenamos alto
   if (renderH > pageHeight) {
     const scaleByHeight = pageHeight / imgH;
     renderH = pageHeight;
     renderW = imgW * scaleByHeight;
   }
 
-  const marginX = 0;                          // ← sin margen lateral (lateral pega al borde)
-  const marginY = (pageHeight - renderH) / 2; // centrado vertical si sobra alto (puedes poner 0)
+  const marginX = 0;                        
+  const marginY = (pageHeight - renderH) / 2; 
 
   pdf.addImage(imgData, 'PNG', marginX, marginY, renderW, renderH);
   pdf.save('CV_Jonathan_Garcia.pdf');

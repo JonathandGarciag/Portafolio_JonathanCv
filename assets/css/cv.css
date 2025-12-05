@@ -167,7 +167,7 @@ a:hover{ text-decoration: underline; }
   a{ color: #0b4a8a; text-decoration:none; }
 }
 
-/* ===== Chips de habilidades (reemplaza .skill-list y .skill) ===== */
+/* ---------- Chips de habilidades ---------- */
 .skill-list{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
 .skill{
   background: var(--chip-bg);
@@ -183,14 +183,12 @@ a:hover{ text-decoration: underline; }
 .skill:hover{ border-color:#b8c0cc; }
 .skill:active{ transform: translateY(1px); }
 
-/* ===== Tecnologías (más sobrias) ===== */
 .tech-grid{ display:flex; flex-wrap:wrap; gap:14px; margin-top:10px; }
 .tech-grid i{
   font-size:22px; color:#8a96a8; transition: color .2s ease, transform .1s ease;
 }
 .tech-grid i:hover{ color:#3b4a62; transform: translateY(-1px); }
 
-/* ===== Títulos laterales (ligeramente más finos) ===== */
 .block-title{
   font-size: 13px; letter-spacing:.08em; text-transform: uppercase;
   font-weight: 700; margin:0 0 10px; color:#bac8ff;
@@ -223,18 +221,17 @@ a:hover{ text-decoration: underline; }
 }
 .btn-link:hover{ background:#eef3ff; border-color:#c7d2fe; }
 
-/* ===== Responsivo de certificaciones ===== */
 @media (max-width: 700px){
   .cert-grid{ grid-template-columns: 1fr; }
 }
 
-/* QR en el lateral */
+/* ---------- QR en el lateral ---------- */
 .qr-box{
   margin-top: 24px;
   text-align: center;
 }
 .qr-img{
-  width: 110px;            /* ajusta 90–130px si quieres */
+  width: 110px;           
   height: auto;
   display: block;
   margin: 8px auto 6px;
@@ -249,87 +246,81 @@ a:hover{ text-decoration: underline; }
   color: whitesmoke;
 }
 
-/* Certificaciones compactas */
+/* ---------- Certificaciones compactas ---------- */
 .cert-grid{
   display:grid;
   grid-template-columns: repeat(2, minmax(0,1fr));
-  gap:10px;                       /* antes 12px */
+  gap:10px;                       
   margin-top: 6px;
 }
 .cert-card{
   border:1px solid var(--line);
-  border-radius:10px;             /* antes 12px */
-  padding:10px 12px;              /* antes 12px 14px */
+  border-radius:10px;           
+  padding:10px 12px;              
   display:flex; align-items:center; gap:10px;
   background:#fff;
 }
 .cert-meta{ display:flex; align-items:center; gap:10px; }
 .cert-icon{
-  width:26px; height:26px;        /* antes 34px */
+  width:26px; height:26px;      
   border-radius:6px;
   display:grid; place-items:center;
   color:#3758a5; background:#eef3ff;
   flex:0 0 auto;
 }
-.cert-text{ line-height:1.25; }   /* texto más cerradito */
+.cert-text{ line-height:1.25; }  
 .cert-title{
   margin:0;
   font-weight:700;
   color:#111827;
-  font-size:13.5px;               /* antes 14px */
+  font-size:13.5px;               
 }
 .cert-sub{
   margin:2px 0 0;
   color:var(--muted);
-  font-size:11.5px;               /* antes 12.5px */
+  font-size:11.5px;             
 }
 
-/* 3 columnas en pantallas anchas (opcional, ahorra más alto) */
 @media (min-width: 1100px){
   .cert-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
 }
 
-/* Responsivo móvil */
 @media (max-width: 700px){
   .cert-grid{ grid-template-columns: 1fr; }
 }
 
 
 .mini-list{
-  list-style: none;      /* quita bullets */
+  list-style: none;      
   margin: 6px 0 0;
   padding: 0;
 }
 .mini-list li{
   margin: 6px 0;
   padding: 6px 0;
-  border-bottom: 1px solid rgba(255,255,255,.10); /* separador sutil */
+  border-bottom: 1px solid rgba(255,255,255,.10);
 }
 .mini-list li:last-child{
   border-bottom: 0;
 }
 
-/* Tipografía más seria */
 .mini-list li strong{
   font-weight: 700; 
-  color: #eef2ff;          /* titulo claro */
+  color: #eef2ff;          
   margin-right: 6px;
 }
 .mini-list li{
-  color: #d3d9e6;          /* valor */
+  color: #d3d9e6;        
   font-size: 13.5px;
   line-height: 1.5;
 }
 
-/* ====== PRINT: 1 hoja A4 con colores y escala única ====== */
 @media print {
   @page { size: A4; margin: 10mm; }
 
-  /* Colores y fondos tal cual */
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   html, body { background: #fff !important; }
 
-  /* Contenedor sin sombras/radios y SIN min-height que rompe la altura */
   .cv{
     box-shadow: none !important;
     border-radius: 0 !important;
@@ -337,31 +328,26 @@ a:hover{ text-decoration: underline; }
     min-height: auto !important;
   }
 
-  /* Quitar sticky del lateral para que no corte */
   .aside{
     position: static !important;
     height: auto !important;
     overflow: visible !important;
   }
 
-  /* Evitar cortes internos de tarjetas/secciones */
   .section, .xp-item, .cert-card, .edu-item {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  /* Oculta QR en papel (si quieres) */
   .qr-box { display: none !important; }
 
-  /* === Escala global: ajusta este valor si aún sale en 2 páginas === */
-  :root { --print-scale: 0.86; } /* prueba 0.88 → 0.86 → 0.84 si falta espacio */
+  :root { --print-scale: 0.86; } 
   .cv{
     transform: scale(var(--print-scale));
     transform-origin: top left;
-    width: calc(210mm / var(--print-scale)); /* compensa el ancho tras escalar */
+    width: calc(210mm / var(--print-scale)); 
   }
 
-  /* Compactación suave para ganar espacio vertical */
   .main, .aside { padding: 20px !important; }
   .section { margin-top: 14px !important; }
   .xp-item { padding: 8px 10px !important; }
