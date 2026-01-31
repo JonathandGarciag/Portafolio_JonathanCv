@@ -155,14 +155,11 @@ header nav a:hover::after {
 .skill-header img[alt="React"] {
   filter: invert(71%) sepia(39%) saturate(4983%) hue-rotate(159deg) brightness(100%) contrast(97%);
 }
-.skill-header img[alt="Java"] {
-  filter: invert(22%) sepia(96%) saturate(2717%) hue-rotate(184deg) brightness(93%) contrast(101%);
-}
 .skill-header img[alt="JavaScript"] {
   filter: invert(81%) sepia(63%) saturate(5070%) hue-rotate(358deg) brightness(100%) contrast(100%);
 }
 .skill-header img[alt="Node.js"] {
-  filter: invert(62%) sepia(23%) saturate(853%) hue-rotate(63deg) brightness(89%) contrast(84%);
+  filter: invert(62%) sepia(23%) saturate(853%)  hue-rotate(63deg) brightness(89%) contrast(84%);
 }
 .skill-header img[alt="MySQL"] {
   filter: invert(40%) sepia(16%) saturate(2017%) hue-rotate(173deg) brightness(92%) contrast(94%);
@@ -175,6 +172,26 @@ header nav a:hover::after {
 }
 .skill-header img[alt="HTML5"] {
   filter: invert(47%) sepia(96%) saturate(746%) hue-rotate(341deg) brightness(95%) contrast(98%);
+}
+
+.skill-header i[title="Java"],
+.skill-header i[title="JavaFX"] {
+  color: #ff2c2c;  
+}
+.skill-header i[title="Git"]        { color: #f1502f; }
+.skill-header i[title="C#"]         { color: #9d00ff; }
+.skill-header i[title="SQL Server"] { color: #333; } 
+.skill-header i[title=".NET"]       { color: #601ef9; }
+.skill-header i[title="Laravel"]    { color: #f1502f; }
+
+.skill-header i {
+  font-size: 1.6rem;   /* súbelo o bájalo si los ves muy grandes/pequeños */
+  width: 26px;         /* mismo ancho que los img */
+  text-align: center;
+  margin-right: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 footer {
