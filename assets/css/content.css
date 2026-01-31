@@ -156,39 +156,78 @@ main {
   justify-content: center;
 }
 
-/* Skills */
-.skills-list {
+/* =====================================================================
+   SKILLS (Cards por categoría)
+   ===================================================================== */
+
+.skills-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
+  grid-template-columns: repeat(5, 1fr); /* 4 exactos, mismo ancho */
+  gap: 18px;
+  max-width: 1200px;
   margin: 0 auto;
+
+  /* CLAVE para que todos tengan la misma altura */
+  align-items: stretch;
 }
-.skill-item {
-  padding: 15px 20px;
+
+.skill-card {
+  height: 100%;              /* se estira al alto de la fila */
+  display: flex;             /* para que el contenido se ordene bien */
+  flex-direction: column;
 }
-.skill-header {
+.skill-card__title {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
+  gap: 10px;
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #222;
 }
-.skill-bar {
-  position: relative;
-  height: 10px;
-  border-radius: 5px;
-  overflow: visible;
-  margin-top: 8px;
+
+.skill-card__title i {
+  font-size: 1.1rem;
+  color: #17c37b; /* mismo tono del detalle verde */
 }
-.skill-fill {
-  height: 100%;
-  width: 0%;
-  border-radius: 5px;
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.skill-percent {
-  position: relative;
-  display: inline-block;
-  margin-left: 8px;
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.skill-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.skill-chip img {
+  width: 20px;
+  height: 20px;
+  filter: none;
+}
+
+.skill-chip i {
+  font-size: 1.25rem;
+  width: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Footer */

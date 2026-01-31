@@ -146,43 +146,89 @@ header nav a:hover::after {
 }
 
 /* Skill */
-.skill-header img {
+.skill-header img,
+.skill-chip img {
   width: 24px;
   height: 24px;
   filter: none;
 }
 
-.skill-header img[alt="React"] {
+/* Filtros para simple-icons (SVG en negro) */
+.skill-header img[alt="React"],
+.skill-chip img[alt="React"] {
   filter: invert(71%) sepia(39%) saturate(4983%) hue-rotate(159deg) brightness(100%) contrast(97%);
 }
-.skill-header img[alt="JavaScript"] {
+
+.skill-header img[alt="JavaScript"],
+.skill-chip img[alt="JavaScript"] {
   filter: invert(81%) sepia(63%) saturate(5070%) hue-rotate(358deg) brightness(100%) contrast(100%);
 }
-.skill-header img[alt="Node.js"] {
-  filter: invert(62%) sepia(23%) saturate(853%)  hue-rotate(63deg) brightness(89%) contrast(84%);
+
+.skill-header img[alt="Node.js"],
+.skill-chip img[alt="Node.js"] {
+  filter: invert(62%) sepia(23%) saturate(853%) hue-rotate(63deg) brightness(89%) contrast(84%);
 }
-.skill-header img[alt="MySQL"] {
+
+.skill-header img[alt="MySQL"],
+.skill-chip img[alt="MySQL"] {
   filter: invert(40%) sepia(16%) saturate(2017%) hue-rotate(173deg) brightness(92%) contrast(94%);
 }
-.skill-header img[alt="MongoDB"] {
+
+.skill-header img[alt="MongoDB"],
+.skill-chip img[alt="MongoDB"] {
   filter: invert(55%) sepia(29%) saturate(775%) hue-rotate(66deg) brightness(90%) contrast(88%);
 }
-.skill-header img[alt="CSS3"] {
+
+.skill-header img[alt="CSS3"],
+.skill-chip img[alt="CSS3"] {
   filter: invert(31%) sepia(69%) saturate(1684%) hue-rotate(183deg) brightness(93%) contrast(97%);
 }
-.skill-header img[alt="HTML5"] {
+
+.skill-header img[alt="HTML5"],
+.skill-chip img[alt="HTML5"] {
   filter: invert(47%) sepia(96%) saturate(746%) hue-rotate(341deg) brightness(95%) contrast(98%);
 }
 
-.skill-header i[title="Java"],
-.skill-header i[title="JavaFX"] {
-  color: #ff2c2c;  
+/* ✅ PHP (nuevo, porque antes estaba mal el alt) */
+.skill-header img[alt="PHP"],
+.skill-chip img[alt="PHP"] {
+  filter: invert(34%) sepia(65%) saturate(1012%) hue-rotate(215deg) brightness(92%) contrast(92%);
 }
-.skill-header i[title="Git"]        { color: #f1502f; }
-.skill-header i[title="C#"]         { color: #9d00ff; }
-.skill-header i[title="SQL Server"] { color: #333; } 
-.skill-header i[title=".NET"]       { color: #601ef9; }
-.skill-header i[title="Laravel"]    { color: #f1502f; }
+
+/* Iconos tipo <i> */
+.skill-header i[title="Java"],
+.skill-header i[title="JavaFX"],
+.skill-chip i[title="Java"],
+.skill-chip i[title="JavaFX"] {
+  color: #ff2c2c;
+}
+
+.skill-header i[title="Git"],
+.skill-chip i[title="Git"] { color: #f1502f; }
+
+.skill-header i[title="C#"],
+.skill-chip i[title="C#"] { color: #9d00ff; }
+
+.skill-header i[title="SQL Server"],
+.skill-chip i[title="SQL Server"] { color: #333; }
+
+.skill-header i[title=".NET"],
+.skill-chip i[title=".NET"] { color: #601ef9; }
+
+.skill-header i[title="Laravel"],
+.skill-chip i[title="Laravel"] { color: #f1502f; }
+.skill-chip img[alt="Docker"] {
+  filter: invert(45%) sepia(86%) saturate(1800%) hue-rotate(185deg) brightness(95%) contrast(95%);
+}
+
+.skill-chip img[alt="Postman"] {
+  filter: invert(52%) sepia(96%) saturate(2210%) hue-rotate(346deg) brightness(95%) contrast(96%);
+}
+
+.skill-chip img[alt="Linux"] {
+  filter: invert(18%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(40%) contrast(100%);
+}
+
 
 .skill-header i {
   font-size: 1.6rem;   /* súbelo o bájalo si los ves muy grandes/pequeños */
