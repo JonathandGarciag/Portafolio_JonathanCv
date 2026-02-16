@@ -99,3 +99,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+
+(() => {
+  const list = document.getElementById("certList");
+  const btn  = document.getElementById("certToggle");
+  if (!list || !btn) return;
+
+  btn.addEventListener("click", () => {
+    const collapsed = list.getAttribute("data-collapsed") === "true";
+    list.setAttribute("data-collapsed", collapsed ? "false" : "true");
+    btn.textContent = collapsed ? "Ver menos" : "Ver todos los certificados";
+  });
+})();

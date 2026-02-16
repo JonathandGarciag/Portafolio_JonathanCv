@@ -162,7 +162,7 @@ main {
 
 .skills-cards {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 4 exactos, mismo ancho */
+  grid-template-columns: repeat(4, 1fr); /* 4 exactos, mismo ancho */
   gap: 18px;
   max-width: 1200px;
   margin: 0 auto;

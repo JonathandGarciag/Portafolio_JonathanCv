@@ -189,7 +189,6 @@ header nav a:hover::after {
   filter: invert(47%) sepia(96%) saturate(746%) hue-rotate(341deg) brightness(95%) contrast(98%);
 }
 
-/* ✅ PHP (nuevo, porque antes estaba mal el alt) */
 .skill-header img[alt="PHP"],
 .skill-chip img[alt="PHP"] {
   filter: invert(34%) sepia(65%) saturate(1012%) hue-rotate(215deg) brightness(92%) contrast(92%);
@@ -229,6 +228,28 @@ header nav a:hover::after {
   filter: invert(18%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(40%) contrast(100%);
 }
 
+.skill-header img[alt="Python"],
+.skill-chip img[alt="Python"] {
+  filter: invert(43%) sepia(58%) saturate(1678%) hue-rotate(175deg) brightness(79%) contrast(58%);
+}
+
+/* Blazor (#512BD4) */
+.skill-header img[alt="Blazor"],
+.skill-chip img[alt="Blazor"] {
+  filter: invert(32%) sepia(78%) saturate(2154%) hue-rotate(237deg) brightness(74%) contrast(135%);
+}
+
+/* Auth0 (#EB5424) */
+.skill-header img[alt="Auth0"],
+.skill-chip img[alt="Auth0"] {
+  filter: invert(52%) sepia(31%) saturate(6025%) hue-rotate(342deg) brightness(90%) contrast(105%);
+}
+
+/* OpenID (#F78C40) - si lo estás usando como <img> */
+.skill-header img[alt="OpenID"],
+.skill-chip img[alt="OpenID"] {
+  filter: invert(42%) sepia(19%) saturate(1056%) hue-rotate(338deg) brightness(135%) contrast(168%);
+}
 
 .skill-header i {
   font-size: 1.6rem;   /* súbelo o bájalo si los ves muy grandes/pequeños */
