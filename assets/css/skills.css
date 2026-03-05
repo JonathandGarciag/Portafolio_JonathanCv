@@ -1,0 +1,127 @@
+/* SKILLS (antes repartido entre sections.css + content.css + style.css) */
+
+/* pill */
+.skill {
+  background: var(--bg-alt);
+  color: var(--accent-a);
+  border: 1px solid var(--br);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.skill:hover {
+  background: var(--writing-bg);
+  transform: scale(1.03);
+}
+
+/* cards por categoría */
+.skills-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.skill-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-card__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--tx-title);
+}
+
+.skill-card__title i {
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--bg-main);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--tx);
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color .12s ease;
+}
+
+.skill-chip:hover {
+  transform: translateY(-1px);
+  border-color: rgba(188, 164, 132, 0.55);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.skill-chip img {
+  width: 20px;
+  height: 20px;
+  filter: none;
+}
+
+.skill-chip i {
+  font-size: 1.25rem;
+  width: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* filtros de iconos */
+.skill-header img { width: 24px; height: 24px; filter: none; }
+
+/* Simple-icons (SVG negro) */
+.skill-chip img[alt="React"] { filter: invert(71%) sepia(39%) saturate(4983%) hue-rotate(159deg) brightness(100%) contrast(97%); }
+.skill-chip img[alt="JavaScript"] { filter: invert(81%) sepia(63%) saturate(5070%) hue-rotate(358deg) brightness(100%) contrast(100%); }
+.skill-chip img[alt="Node.js"] { filter: invert(62%) sepia(23%) saturate(853%) hue-rotate(63deg) brightness(89%) contrast(84%); }
+.skill-chip img[alt="MySQL"] { filter: invert(40%) sepia(16%) saturate(2017%) hue-rotate(173deg) brightness(92%) contrast(94%); }
+.skill-chip img[alt="MongoDB"] { filter: invert(55%) sepia(29%) saturate(775%) hue-rotate(66deg) brightness(90%) contrast(88%); }
+.skill-chip img[alt="CSS3"] { filter: invert(31%) sepia(69%) saturate(1684%) hue-rotate(183deg) brightness(93%) contrast(97%); }
+.skill-chip img[alt="HTML5"] { filter: invert(47%) sepia(96%) saturate(746%) hue-rotate(341deg) brightness(95%) contrast(98%); }
+.skill-chip img[alt="PHP"] { filter: invert(34%) sepia(65%) saturate(1012%) hue-rotate(215deg) brightness(92%) contrast(92%); }
+.skill-chip img[alt="Docker"] { filter: invert(45%) sepia(86%) saturate(1800%) hue-rotate(185deg) brightness(95%) contrast(95%); }
+.skill-chip img[alt="Postman"] { filter: invert(52%) sepia(96%) saturate(2210%) hue-rotate(346deg) brightness(95%) contrast(96%); }
+.skill-chip img[alt="Linux"] { filter: invert(18%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(40%) contrast(100%); }
+.skill-chip img[alt="Python"] { filter: invert(43%) sepia(58%) saturate(1678%) hue-rotate(175deg) brightness(79%) contrast(58%); }
+.skill-chip img[alt="Blazor"] { filter: invert(32%) sepia(78%) saturate(2154%) hue-rotate(237deg) brightness(74%) contrast(135%); }
+.skill-chip img[alt="Auth0"] { filter: invert(52%) sepia(31%) saturate(6025%) hue-rotate(342deg) brightness(90%) contrast(105%); }
+.skill-chip img[alt="OpenID"] { filter: invert(42%) sepia(19%) saturate(1056%) hue-rotate(338deg) brightness(135%) contrast(168%); }
+
+/* Iconos tipo <i> */
+.skill-chip i[title="Java"],
+.skill-chip i[title="JavaFX"] { color: #ff2c2c; }
+
+.skill-chip i[title="Git"] { color: #f1502f; }
+.skill-chip i[title="C#"] { color: #9d00ff; }
+.skill-chip i[title="SQL Server"] { color: var(--tx); }
+.skill-chip i[title=".NET"] { color: #601ef9; }
+.skill-chip i[title="Laravel"] { color: #f1502f; }
+
+.skill-header i {
+  font-size: 1.6rem;
+  width: 26px;
+  text-align: center;
+  margin-right: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

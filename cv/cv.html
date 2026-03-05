@@ -15,17 +15,47 @@
   <style>
 /* Fallback: mismos ajustes clave, por si el archivo externo no se aplica al imprimir */
 @media print {
-  @page { size: A4; margin: 10mm; }
+  @page { size: A4; margin: 0; }
+
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  html, body { background:#fff !important; }
-  .cv{ box-shadow:none!important; border-radius:0!important; margin:0!important; min-height:auto!important; }
-  .aside{ position:static!important; height:auto!important; overflow:visible!important; }
-  .section, .xp-item, .cert-card, .edu-item { break-inside:avoid; page-break-inside:avoid; }
-  .qr-box{ display:none!important; }
-  :root { --print-scale: 0.86; }
-  .cv{ transform:scale(var(--print-scale)); transform-origin:top left; width:calc(210mm / var(--print-scale)); }
-  .main, .aside { padding:20px!important; } .section { margin-top:14px!important; }
-  .xp-item { padding:8px 10px!important; } .cert-card { padding:6px 8px!important; }
+
+  html, body{
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  #btnExport{ display: none !important; }
+  .qr-box{ display: none !important; }
+
+  /* ✅ A4 real, sin “scale” */
+  .cv{
+    width: 210mm !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+
+    transform: none !important;   /* 🔥 clave */
+  }
+
+  .aside{
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .section, .xp-item, .cert-card, .edu-item{
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Si necesitás que quepa en 1 página: compactá aquí (sin scale) */
+  .main, .aside { padding: 16px !important; }
+  .section { margin-top: 12px !important; }
+  .xp-item { padding: 7px 9px !important; }
+  .cert-card { padding: 6px 8px !important; }
 }
 </style>
 
@@ -43,7 +73,7 @@
   <article class="cv">
     <!-- Lateral -->
     <aside class="aside">
-      <img src="./assets/img/MiPersonaSonrisaCortada.png" alt="Jonathan García" class="portrait"/>
+      <img src="../assets/img/MiPersonaSonrisaCortada.png" alt="Jonathan García" class="portrait"/>
 
       <h2>Jonathan David García</h2>
       <p class="role">Desarrollador Full Stack (18 años)</p>
@@ -99,9 +129,9 @@
 
       <section class="block qr-box">
         <h3 class="block-title">Portafolio</h3>
-        <img src="../assets/img/Portafolio.png" alt="QR a portafolio" class="qr-img">
+        <img src="../assets/img/Portafolio.png" id="qr-portfolio" class="qr-img" src="./assets/img/Portafolio.png" alt="QR a portafolio">
         <div class="qr-caption">Escanéame para ver mi portafolio / GitHub entre otras cosas</div>
-        <img src="../assets/img/Linkedin.png" alt="QR a portafolio" class="qr-img">
+        <img src="../assets/img/Linkedin.png" img id="qr-linkedin"  class="qr-img" src="./assets/img/Linkedin.png" alt="QR a linkedin">
         <div class="qr-caption">Escanéame para ver mi <a href="https://gt.linkedin.com/in/jonathan-david-garc%C3%ADa-guti%C3%A9rrez-3827183a3?trk=public_profile_samename-profile" target="_blank" rel="noopener">Linkedin Jonathan Gutiérrez</a></div>
       </section>
 
@@ -290,73 +320,52 @@
 <script>
 async function exportCVToPDF() {
   const { jsPDF } = window.jspdf;
+  const node = document.querySelector(".cv");
 
-  const node = document.querySelector('.cv');
+  // ✅ más nitidez (3 suele verse mucho mejor que 2)
+  const SCALE = 3;
 
-  const canvas = await html2canvas(node, {
-    scale: 2,             
-    useCORS: true,
-    backgroundColor: null   
-  });
-  const imgData = canvas.toDataURL('image/png');
-
-  const pdf = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
-  const pageWidth = 210;
-  const pageHeight = 297;
-
-  const pxToMm = (px) => px * 25.4 / 96;
-  const imgWidthMm  = pxToMm(canvas.width);
-  const imgHeightMm = pxToMm(canvas.height);
-
-  const scale = Math.min(pageWidth / imgWidthMm, pageHeight / imgHeightMm);
-
-  const renderWidth  = imgWidthMm * scale;
-  const renderHeight = imgHeightMm * scale;
-
-  const marginX = (pageWidth  - renderWidth)  / 2;
-  const marginY = (pageHeight - renderHeight) / 2;
-
-  pdf.addImage(imgData, 'PNG', marginX, marginY, renderWidth, renderHeight);
-  pdf.save('CV_Jonathan_Garcia.pdf');
-}
-
-async function exportCVToPDF() {
-  const { jsPDF } = window.jspdf;
-  const node = document.querySelector('.cv');
+  // ✅ queremos la mejor calidad posible sin pasar 3MB
+  const MAX_BYTES = 3 * 1024 * 1024;
+  let JPEG_Q = 0.98;
 
   const canvas = await html2canvas(node, {
-    scale: 2,
+    scale: SCALE,
     useCORS: true,
-    backgroundColor: '#ffffff'   
+    backgroundColor: "#ffffff",
+    scrollY: -window.scrollY,
+    windowWidth: node.scrollWidth,
+    windowHeight: node.scrollHeight
   });
-  const imgData = canvas.toDataURL('image/png');
 
-  const pdf = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
-  const pageWidth = 210, pageHeight = 297;
+  const pdf = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait", compress: true });
+  const pageW = pdf.internal.pageSize.getWidth();   // 210
+  const pageH = pdf.internal.pageSize.getHeight();  // 297
 
-  const pxToMm = px => px * 25.4 / 96;
-  const imgW = pxToMm(canvas.width);
-  const imgH = pxToMm(canvas.height);
+  // helper: estimar bytes del dataURL base64
+  const estimateBytes = (dataUrl) => {
+    const b64 = (dataUrl.split(",")[1] || "");
+    return Math.ceil((b64.length * 3) / 4);
+  };
 
-  const scaleByWidth = pageWidth / imgW;
-  let renderW = pageWidth;
-  let renderH = imgH * scaleByWidth;
-
-  if (renderH > pageHeight) {
-    const scaleByHeight = pageHeight / imgH;
-    renderH = pageHeight;
-    renderW = imgW * scaleByHeight;
+  // generar imagen con el mayor Q posible sin pasarse de 3MB
+  let imgData = canvas.toDataURL("image/jpeg", JPEG_Q);
+  while (estimateBytes(imgData) > MAX_BYTES && JPEG_Q > 0.80) {
+    JPEG_Q -= 0.03;
+    imgData = canvas.toDataURL("image/jpeg", JPEG_Q);
   }
 
-  const marginX = 0;                        
-  const marginY = (pageHeight - renderH) / 2; 
+  // ✅ SIEMPRE llenar el ancho
+  const imgW = pageW;
 
-  pdf.addImage(imgData, 'PNG', marginX, marginY, renderW, renderH);
-  pdf.save('CV_Jonathan_Garcia.pdf');
+  // ✅ 1 sola hoja y sin barra (tu regla actual)
+  const imgH = pageH;
+
+  // ✅ "SLOW" suele verse mejor que "FAST" en el PDF final
+  pdf.addImage(imgData, "JPEG", 0, 0, imgW, imgH, undefined, "SLOW");
+
+  pdf.save("CV_Jonathan_Garcia.pdf");
 }
-
 </script>
-
-
 </body>
 </html>

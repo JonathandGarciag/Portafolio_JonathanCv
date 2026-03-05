@@ -1,0 +1,108 @@
+/* MODALS (antes en sections.css) */
+
+.modal {
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background-color: rgba(5, 5, 5, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Un contenedor visual para el contenido del modal */
+.modal .modal-content{
+  background: var(--modal-bg);
+  border: 1px solid var(--br);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+/* Modal viewer */
+.modal-view .modal-content {
+  max-width: 70vw;
+  max-height: 80vh;
+  text-align: center;
+}
+
+#modal-main-img-view {
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.20);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Modal projects */
+.modal-project .modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  text-align: center;
+}
+
+#modal-main-img-project {
+  width: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.20);
+  display: block;
+  margin: 0 auto;
+}
+
+/* thumbnails */
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  overflow-x: auto;
+  padding: 10px;
+  justify-content: center;
+  background: var(--bg-alt);
+  border: 1px solid var(--br);
+  border-radius: 12px;
+}
+
+.thumbnails img {
+  width: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0.75;
+  border: 1px solid transparent;
+  transition: opacity .15s ease, transform .15s ease, border-color .15s ease;
+}
+
+.thumbnails img:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  border-color: rgba(188, 164, 132, 0.55);
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 24px;
+  color: var(--bg-main);
+  font-size: 40px;
+  cursor: pointer;
+  transition: color .2s ease, transform .15s ease;
+}
+
+.modal-close:hover{
+  color: var(--accent-h);
+  transform: scale(1.05);
+}

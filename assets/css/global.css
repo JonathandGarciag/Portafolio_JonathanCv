@@ -1,0 +1,207 @@
+/* Global (antes estaba repartido entre style.css + content.css + sections.css) */
+
+/* Variables del tema (paleta Dark Green & Tan adaptada a fondo claro-medio) */
+:root{
+  /* Fondo claro-medio */
+  --bg-body: #e8e4dc;
+  --bg-main: #f2f1ef;
+  --bg-alt:  #e4d8cc;
+  --writing-bg: #dacbbc;
+
+  /* Texto */
+  --tx-title: #141417;
+  --tx:       #232424;
+  --tx-sub:   #6b6c6c;
+  --tx-muted: #939394;
+
+  /* Bordes / sombras */
+  --br:       #aaa6a0;
+  --br-strong:#a49c8c;
+
+  /* Acento (interactivo: botones, links, activos, focus, slider dots, etc.) */
+  --accent:   #bca484;
+  --accent-h: #bcac8c;
+  --accent-a: #8c846d;
+
+  /* Navegación */
+  --sidebar-bg: #2c332c;
+  --sidebar-tx: #f2f1ef;
+  --nav-border: #444c4b;
+  --nav-hover:  #343c3b;
+  --nav-active: #3c3c3c;
+
+  /* Superficies */
+  --card-bg:  #f2f1ef;
+
+  /* Modales */
+  --overlay:  #050505;
+  --modal-bg: #f2f1ef;
+}
+
+/* Base */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-body);
+  color: var(--tx);
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+main {
+  display: block;
+  padding: 40px 20px;
+}
+
+/* Links */
+a{
+  color: var(--accent-a);
+  transition: color .2s ease;
+}
+a:hover{
+  color: var(--accent);
+}
+
+/* Botones (clase global) */
+.btn {
+  background: var(--accent);
+  color: var(--tx-title);
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow .2s ease;
+}
+
+.btn:hover {
+  background: var(--accent-h);
+  transform: translateY(-1px);
+}
+
+.btn:active{
+  background: var(--accent-a);
+  transform: translateY(0);
+}
+
+/* Botón secondary (outline / suave) */
+.btn.secondary {
+  background: transparent;
+  color: var(--tx);
+  border: 1px solid var(--br-strong);
+}
+.btn.secondary:hover {
+  background: var(--bg-alt);
+}
+
+/* Focus accesible (para teclado) */
+.btn:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(188, 164, 132, 0.28);
+}
+
+/* Animación fadeIn */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Quitar outlines feos (swiper) */
+.swiper-button-next:focus,
+.swiper-button-prev:focus,
+img:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* =========================
+   FIX: botones (texto visible en hover) + secundarios bonitos
+========================= */
+
+/* 1) Evitar que el hover global de <a> afecte a botones */
+a.btn:hover,
+a.btn:active,
+a.btn:focus,
+a.btn:visited {
+  color: inherit;
+}
+
+/* (opcional pero recomendado) que solo links normales cambien en hover */
+a:not(.btn):hover { 
+  color: var(--accent); 
+}
+
+/* 2) Botón primario: SIEMPRE mantener texto visible */
+.btn,
+.btn:visited{
+  background: var(--accent);
+  color: var(--tx-title);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+.btn:hover{
+  background: var(--accent-h);
+  color: var(--tx-title); /* <- clave */
+}
+
+.btn:active{
+  background: var(--accent-a);
+  color: var(--tx-title);
+}
+
+/* iconos dentro del btn heredan el color */
+.btn i,
+.btn svg{
+  color: currentColor;
+  fill: currentColor;
+}
+
+/* 3) Botón secondary (outline) en secciones claras: que NO sea feo/transparentón */
+.btn.secondary,
+.btn.secondary:visited{
+  background: rgba(242, 241, 239, 0.65); /* #f2f1ef suave */
+  color: var(--tx-title);
+  border: 1px solid rgba(188, 164, 132, 0.55);
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+.btn.secondary:hover{
+  background: rgba(228, 216, 204, 0.90); /* #e4d8cc */
+  color: var(--tx-title); /* <- clave */
+  border-color: var(--accent);
+}
+
+.btn.secondary:active{
+  background: rgba(218, 203, 188, 0.95); /* #dacbbc */
+  color: var(--tx-title);
+}
+
+/* 4) Secondary dentro del HERO (fondo oscuro): estilo “glass” y texto blanco */
+.hero .btn.secondary,
+.hero .btn.secondary:visited{
+  background: rgba(5, 5, 5, 0.18);
+  color: #f2f1ef;
+  border: 1px solid rgba(242, 241, 239, 0.55);
+}
+
+.hero .btn.secondary:hover{
+  background: rgba(242, 241, 239, 0.14);
+  color: #f2f1ef; /* <- clave */
+  border-color: var(--accent-h);
+}
+
+.hero .btn.secondary:active{
+  background: rgba(188, 164, 132, 0.25);
+  color: #f2f1ef;
+  border-color: var(--accent);
+}

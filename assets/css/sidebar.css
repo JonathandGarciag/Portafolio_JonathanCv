@@ -1,0 +1,86 @@
+/* =========================
+   Sidebar (visual + layout)
+========================= */
+
+/* Visual */
+.sidebar {
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--nav-border);
+}
+
+.sidebar-logo .icon {
+  font-size: 22px;
+  color: var(--accent);
+}
+
+/* Social icons */
+.sidebar-social a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  transition: background .2s ease, transform .15s ease;
+  color: var(--sidebar-tx); /* para SVG (currentColor) */
+}
+
+.sidebar-social img,
+.sidebar-social svg {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(92%); /* blanco suave */
+  transition: filter 0.2s ease;
+}
+
+.sidebar-social a:hover{
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+.sidebar-social a:hover img,
+.sidebar-social a:hover svg{
+  filter: brightness(0) invert(12%); /* negro suave sobre tan */
+}
+
+.sidebar-social a:active{
+  background: var(--accent-a);
+}
+
+/* Si algún SVG trae fill fijo, lo forzamos */
+.sidebar-social svg path{
+  fill: currentColor;
+}
+
+/* Layout */
+.sidebar {
+  width: 60px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.sidebar-logo {
+  margin-bottom: 30px;
+}
+
+.sidebar-social {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Empuja el contenido a la derecha por el ancho del sidebar */
+.content {
+  margin-left: 60px;
+  width: calc(100% - 60px);
+  display: block;
+}

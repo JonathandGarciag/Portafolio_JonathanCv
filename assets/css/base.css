@@ -1,0 +1,24 @@
+/* Base reset (para que sidebar + topbar queden PEGADOS como en el index viejo) */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Fondo y tipografía base (alineado al tema) */
+body{
+  background: var(--bg-body);
+  color: var(--tx);
+}
+
+/* Hace que los wrappers no “metan” espacio raro */
+#sidebar-slot,
+#topbar-slot,
+#footer-slot{
+  display: contents;
+}

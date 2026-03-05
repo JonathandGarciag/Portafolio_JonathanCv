@@ -316,16 +316,30 @@ a:hover{ text-decoration: underline; }
 }
 
 @media print {
-  @page { size: A4; margin: 10mm; }
+  @page { size: A4; margin: 0; }
 
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  html, body { background: #fff !important; }
 
-  .cv{
-    box-shadow: none !important;
-    border-radius: 0 !important;
+  html, body{
     margin: 0 !important;
-    min-height: auto !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  /* ocultar botón */
+  #btnExport{ display: none !important; }
+
+  /* ✅ ancho exacto de A4 */
+  .cv{
+    width: 210mm !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    min-height: 297mm !important;
+
+    /* ❌ IMPORTANTÍSIMO: quitar el escalado */
+    transform: none !important;
   }
 
   .aside{
@@ -334,28 +348,16 @@ a:hover{ text-decoration: underline; }
     overflow: visible !important;
   }
 
-  .section, .xp-item, .cert-card, .edu-item {
+  .section, .xp-item, .cert-card, .edu-item{
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
   .qr-box { display: none !important; }
 
-  :root { --print-scale: 0.86; } 
-  .cv{
-    transform: scale(var(--print-scale));
-    transform-origin: top left;
-    width: calc(210mm / var(--print-scale)); 
-  }
-
-  .main, .aside { padding: 20px !important; }
-  .section { margin-top: 14px !important; }
-  .xp-item { padding: 8px 10px !important; }
+  /* si querés compactar para 1 página, bajá padding aquí (no con scale) */
+  .main, .aside { padding: 14px !important; }
+  .section { margin-top: 12px !important; }
+  .xp-item { padding: 7px 9px !important; }
   .cert-card { padding: 6px 8px !important; }
 }
-
-@media print {
-  #btnExport { display: none !important; }
-}
-
-@media print { #btnExport{ display:none !important; } }

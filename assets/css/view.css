@@ -1,0 +1,114 @@
+/* VIEW (proporcional: ni pegado ni enorme) */
+.view {
+  background: var(--bg-main);
+  color: var(--tx);
+  text-align: center;
+  padding: 60px 28px;
+}
+
+/* Texto de arriba */
+.view h1 {
+  color: var(--tx-title);
+  font-size: 1.65em;
+  margin: 0 0 10px;
+}
+
+.view p {
+  color: var(--tx-sub);
+  margin: 0 0 18px;
+}
+
+/* Swiper más “contenidito” y centrado */
+.viewer-swiper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  /* aire alrededor + espacio para flechas sin quedar pegadas */
+  padding: 22px 78px 44px;
+
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden; /* evita “asomados” */
+}
+
+/* Cada slide con respiración */
+.viewer-swiper .swiper-slide {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 12px;
+}
+
+/* Card de cada imagen */
+.viewer-swiper .view-container {
+  width: 100%;
+  max-width: 620px;
+  background: var(--bg-main);
+  border: 1px solid var(--br);
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Imagen */
+.viewer-swiper .profile-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  margin: 0;
+}
+
+/* Título bajo imagen */
+.viewer-swiper .view-container h2,
+.viewer-swiper .view-container h3 {
+  margin: 0;
+  color: var(--tx-title);
+  font-weight: 900;
+}
+
+/* Flechas: dentro pero con aire */
+.viewer-swiper .swiper-button-prev,
+.viewer-swiper .swiper-button-next{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(228, 216, 204, 0.85);
+  border: 1px solid rgba(170, 166, 160, 0.9);
+}
+
+.viewer-swiper .swiper-button-prev{ left: 18px; }
+.viewer-swiper .swiper-button-next{ right: 18px; }
+
+.viewer-swiper .swiper-button-prev::after,
+.viewer-swiper .swiper-button-next::after{
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .viewer-swiper{
+    padding: 18px 56px 38px;
+  }
+}
+
+@media (max-width: 768px){
+  .view{ padding: 44px 16px; }
+  .viewer-swiper{
+    padding: 16px 44px 34px;
+    max-width: 680px;
+  }
+  .viewer-swiper .view-container{
+    max-width: 520px;
+    padding: 18px;
+  }
+  .viewer-swiper .swiper-button-prev{ left: 10px; }
+  .viewer-swiper .swiper-button-next{ right: 10px; }
+}

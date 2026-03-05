@@ -1,0 +1,78 @@
+/* =========================
+   Footer
+========================= */
+
+footer {
+  background: var(--bg-alt);
+  padding: 15px 20px;
+  margin-top: 40px;
+  text-align: center;
+  border-top: 1px solid var(--br);
+  color: var(--tx);
+}
+
+footer form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+footer input,
+footer textarea {
+  padding: 12px;
+  border: 1px solid var(--br);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95em;
+  width: 220px;
+  box-sizing: border-box;
+  text-align: left;
+  transition: border 0.2s ease, box-shadow 0.2s ease, background .2s ease;
+  background: var(--bg-main);
+  color: var(--tx);
+}
+
+footer textarea {
+  width: 300px;
+  min-height: 80px;
+  resize: vertical;
+}
+
+footer input:focus,
+footer textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(188, 164, 132, 0.24);
+  outline: none;
+}
+
+footer button {
+  background: var(--accent);
+  color: var(--tx-title);
+  border: 1px solid var(--accent);
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 800;
+  transition: background 0.2s ease, transform 0.15s ease;
+  align-self: center;
+  white-space: nowrap;
+}
+
+footer button:hover {
+  background: var(--accent-h);
+  transform: translateY(-1px);
+}
+
+footer button:active{
+  background: var(--accent-a);
+  transform: translateY(0);
+}
+
+footer p {
+  color: var(--tx-muted);
+  font-size: 0.9em;
+  margin: 0;
+}

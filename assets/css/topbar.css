@@ -1,0 +1,74 @@
+/* =========================
+   Topbar / Header
+========================= */
+
+/* Para que los anchors (#home, #about, etc.) no queden tapados por el sticky header */
+html {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 100px;
+  overflow-x: hidden;
+}
+
+/* Header visual */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: var(--bg-main);
+  border-bottom: 1px solid var(--br);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+}
+
+header .logo {
+  font-weight: 700;
+  font-size: 1.2em;
+  color: var(--accent);
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--tx);
+  font-weight: 600;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  padding: 6px 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+header nav a:hover {
+  color: var(--accent);
+}
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+header nav a.active{
+  color: var(--accent);
+}
+
+header nav a.active::after {
+  width: 100%;
+}

@@ -1,0 +1,19 @@
+/* Base de secciones (antes en sections.css) */
+section {
+  background: var(--card-bg);
+  border: 1px solid var(--br);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 50px 30px;
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+section h2 {
+  color: var(--tx-title);
+  border-left: 4px solid var(--accent);
+  padding-left: 12px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}

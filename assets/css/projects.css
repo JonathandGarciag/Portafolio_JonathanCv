@@ -1,0 +1,161 @@
+/* PROJECTS (antes repartido entre content.css + sections.css) */
+
+.projects-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Project hover */
+.project img {
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.project img:hover {
+  transform: scale(1.03);
+}
+
+/* =========================
+   PROJECTS - estabilidad + centrado visual
+========================= */
+/* Espacio abajo para que no se monten los puntitos */
+#projects .projects-swiper{
+  position: relative;
+  padding-bottom: 46px !important; /* ajustá 36-60 según te guste */
+  overflow: hidden; /* mantenelo para evitar “peek” */
+}
+
+/* Puntitos abajo, pero visibles */
+#projects .projects-swiper .swiper-pagination{
+  bottom: 12px !important;  /* 6-18 según qué tan abajo */
+  z-index: 10;
+}
+
+#projects .projects-swiper .swiper-slide{
+  width: 100% !important;
+  flex: 0 0 100% !important;
+}
+
+/* Asegura que el contenido quede centrado siempre */
+#projects .project-content{
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Flechas: dentro, pero no al extremo */
+#projects .projects-swiper .swiper-button-prev{ left: 36px !important; }
+#projects .projects-swiper .swiper-button-next{ right: 36px !important; }
+
+@media (max-width: 768px){
+  #projects .projects-swiper .swiper-button-prev{ left: 16px !important; }
+  #projects .projects-swiper .swiper-button-next{ right: 16px !important; }
+}
+
+.project-content {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  width: 100%;
+}
+
+.project-gallery {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.project-gallery .main-img {
+  width: 350px;
+  height: 265px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid var(--br);
+}
+
+.project-gallery .side-images {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-gallery .side-images .thumb-img {
+  height: 125px;
+  width: 250px;
+  border-radius: 12px;
+  cursor: pointer;
+  opacity: 0.88;
+  border: 1px solid var(--br);
+  transition: opacity 0.2s, transform .15s;
+}
+
+.project-gallery .side-images .thumb-img:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.project-info {
+  flex: 1;
+  min-width: 220px;
+}
+
+.project-info h3 {
+  margin: 0 0 10px;
+  font-weight: 900;
+  color: var(--tx-title);
+}
+
+.project-info p {
+  margin: 0 0 15px;
+  color: var(--tx-sub);
+  line-height: 1.55;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+/* Botones en Projects (mantener compacto) */
+.project-links .btn{
+  padding: 8px 16px;
+}
+
+/* Flechas Projects: no pegadas, pero tampoco al extremo */
+#projects .projects-swiper .swiper-button-prev{ left: 36px !important; }
+#projects .projects-swiper .swiper-button-next{ right: 36px !important; }
+
+/* En pantallas pequeñas, que no se metan demasiado */
+@media (max-width: 768px){
+  #projects .projects-swiper .swiper-button-prev{ left: 16px !important; }
+  #projects .projects-swiper .swiper-button-next{ right: 16px !important; }
+}
+
+/* Flechas Projects: estilo “botón” */
+#projects .projects-swiper .swiper-button-prev,
+#projects .projects-swiper .swiper-button-next{
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(228,216,204,.92); /* similar a tu paleta */
+  border: 1px solid rgba(170,166,160,.9);
+  box-shadow: 0 8px 18px rgba(0,0,0,.10);
+  transition: transform .15s ease, filter .15s ease;
+}
+
+#projects .projects-swiper .swiper-button-prev:hover,
+#projects .projects-swiper .swiper-button-next:hover{
+  transform: scale(1.06);
+  filter: brightness(0.98);
+}
+
+/* Icono (la flecha) */
+#projects .projects-swiper .swiper-button-prev::after,
+#projects .projects-swiper .swiper-button-next::after{
+  font-size: 18px;
+  font-weight: 900;
+}

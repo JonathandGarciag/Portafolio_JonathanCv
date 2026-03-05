@@ -1,0 +1,175 @@
+/* CERTIFICATES (antes en sections.css) */
+
+.certificates-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+
+.cert-toggle{
+  border: 1px solid var(--accent);
+  background: var(--bg-main);
+  color: var(--accent-a);
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.cert-toggle:hover{
+  background: var(--accent);
+  color: var(--tx-title);
+}
+
+.certificates-list{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:16px;
+}
+
+.certificates-list[data-collapsed="true"] .certificate.is-extra{
+  display:none;
+}
+
+.certificate{
+  background: var(--bg-main);
+  border: 1px solid var(--br);
+  border-radius: 14px;
+  overflow:hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.certificate:hover{
+  transform: translateY(-2px);
+  border-color: rgba(188, 164, 132, 0.55);
+  box-shadow:0 12px 28px rgba(0,0,0,.10);
+}
+
+.cert-thumb{
+  display:block;
+  position:relative;
+  aspect-ratio: 16/10;
+  background: #343c3b;
+  overflow:hidden;
+  text-decoration:none;
+}
+
+.cert-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  padding:18px;
+  opacity:.95;
+}
+
+.cert-badge{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background: rgba(242,241,239,.92);
+  color: var(--tx-title);
+  font-size:.75rem;
+  padding:4px 10px;
+  border-radius:999px;
+  font-weight:900;
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+.cert-body{
+  padding:12px 14px 14px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.cert-title{
+  margin:0;
+  font-size:.95rem;
+  line-height:1.25;
+  font-weight:900;
+  color: var(--tx-title);
+
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  min-height:2.4em;
+}
+
+.cert-actions{
+  display:flex;
+  gap:10px;
+  margin-top:6px;
+}
+
+.cert-btn{
+  flex:1;
+  text-align:center;
+  text-decoration:none;
+  border-radius:12px;
+  padding:9px 10px;
+  font-weight:900;
+  font-size:.9rem;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+/* Botón principal del certificado */
+.cert-btn.primary{
+  background: var(--accent);
+  color: var(--tx-title);
+  border: 1px solid var(--accent);
+}
+.cert-btn.primary:hover{
+  background: var(--accent-h);
+}
+.cert-btn.primary:active{
+  background: var(--accent-a);
+}
+
+/* Botón ghost (outline) */
+.cert-btn.ghost{
+  background: transparent;
+  color: var(--accent-a);
+  border:1px solid var(--accent);
+}
+.cert-btn.ghost:hover{
+  background: rgba(188, 164, 132, .12);
+}
+
+.cert-toggle:hover{
+  color: var(--tx-title);
+}
+
+/* Animaciones al mostrar/ocultar certificados extra */
+.certificate.cert-show{
+  animation: certIn .28s ease both;
+}
+
+.certificate.cert-hide{
+  animation: certOut .18s ease both;
+}
+
+@keyframes certIn{
+  from{ opacity:0; transform: translateY(10px) scale(.985); }
+  to  { opacity:1; transform: translateY(0) scale(1); }
+}
+
+@keyframes certOut{
+  from{ opacity:1; transform: translateY(0) scale(1); }
+  to  { opacity:0; transform: translateY(6px) scale(.99); }
+}
+
+/* Respeta usuarios con menos animación */
+@media (prefers-reduced-motion: reduce){
+  .certificate.cert-show,
+  .certificate.cert-hide{ animation: none !important; }
+}

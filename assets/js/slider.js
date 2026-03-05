@@ -4,7 +4,7 @@
 var viewerSwiper = new Swiper(".viewer-swiper", {
   slidesPerView: 2,
   slidesPerGroup: 2,
-  spaceBetween: 20,
+  spaceBetween: 34,
   loop: true,
   centeredSlides: false,
   autoplay: {
@@ -12,11 +12,11 @@ var viewerSwiper = new Swiper(".viewer-swiper", {
     disableOnInteraction: false,
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".viewer-swiper .swiper-button-next",
+    prevEl: ".viewer-swiper .swiper-button-prev",
   },
   pagination: {
-    el: ".swiper-pagination",
+    el: ".viewer-swiper .swiper-pagination",
     clickable: true,
   },
 });
@@ -31,23 +31,28 @@ const zoom = mediumZoom('.viewer-swiper .profile-image', {
 // ----------------------
 // Carrusel PROJECTS
 // ----------------------
-const projectsSwiper = new Swiper(".swiper-container.projects-swiper", {
+const projectsSwiper = new Swiper(".projects-swiper", {
   slidesPerView: 1,
   spaceBetween: 0,
   loop: true,
   centeredSlides: false,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+
+  // ✅ para que NO “aparezcan” al arrastrar
+  allowTouchMove: false,
+  simulateTouch: false,
+
+  // ✅ quito autoplay porque en loop te puede dejar clones visibles en transiciones
+  autoplay: true,
+
+  // ✅ navegación/paginación SOLO dentro de projects
   navigation: {
     nextEl: ".projects-swiper .swiper-button-next",
-    prevEl: ".projects-swiper .swiper-button-prev"
+    prevEl: ".projects-swiper .swiper-button-prev",
   },
   pagination: {
     el: ".projects-swiper .swiper-pagination",
-    clickable: true
-  }
+    clickable: true,
+  },
 });
 
 // ----------------------

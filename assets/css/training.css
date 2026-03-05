@@ -1,0 +1,133 @@
+/* TRAINING (antes en sections.css + style.css) */
+
+/* Header grid */
+.education-header{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.education-header h2{
+  grid-column: 1;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.education-subtitle{
+  grid-column: 1;
+  margin: 2px 0 0 2px;
+  font-size: 1rem;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--tx-sub);
+}
+
+.education-tabs{
+  grid-column: 3;
+  justify-self: end;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Tabs */
+.tab-button {
+  padding: 8px 16px;
+  border: 1px solid var(--accent);
+  background: var(--bg-main);
+  color: var(--accent-a);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+.tab-button:hover {
+  background: var(--accent);
+  color: var(--tx-title);
+}
+.tab-button.active {
+  background: var(--accent);
+  color: var(--tx-title);
+}
+
+/* Panel */
+.education-content {
+  background: var(--bg-main);
+  border: 1px solid var(--br);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.education-panel {
+  display: none;
+  animation: fadeIn 0.4s ease forwards;
+}
+.education-panel.active {
+  display: block;
+}
+.education-panel h3 {
+  margin-top: 0;
+  font-weight: 800;
+  color: var(--tx-title);
+}
+.education-panel p {
+  margin: 4px 0;
+  color: var(--tx-sub);
+}
+.education-panel span {
+  font-size: 0.95em;
+  color: var(--tx-muted);
+}
+
+/* Timeline */
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.education-year {
+  position: relative;
+  padding-left: 30px;
+  border-left: 3px solid var(--accent);
+}
+
+.education-year h3 {
+  font-size: 1.2em;
+  color: var(--accent-a);
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.education-detail {
+  background: var(--bg-main);
+  border: 1px solid var(--br);
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.education-detail h4 {
+  margin: 0 0 5px;
+  font-weight: 800;
+  color: var(--tx-title);
+}
+
+.education-detail p {
+  margin: 0 0 5px;
+  color: var(--tx-sub);
+  font-size: 0.95em;
+}
+
+.education-detail span {
+  display: block;
+  font-size: 0.9em;
+  color: var(--tx-muted);
+}
+
+.tab-button:hover,
+.tab-button.active{
+  color: var(--tx-title);
+}
