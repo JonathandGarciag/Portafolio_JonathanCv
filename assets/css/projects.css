@@ -159,3 +159,55 @@
   font-size: 18px;
   font-weight: 900;
 }
+
+/* ===== NUEVO DE BOTÓN ===== */
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.project-repo-btn {
+  min-width: 160px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  text-decoration: none;
+  background: linear-gradient(180deg, #c8ae88 0%, #bfa27b 100%);
+  color: #1f1f1f;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-repo-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.14);
+  filter: brightness(1.02);
+}
+
+.project-repo-btn__top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.project-repo-btn__top i {
+  font-size: 1.15rem;
+}
+
+.project-repo-btn__bottom {
+  width: fit-content;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #2f2f2f;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 4px 8px;
+  border-radius: 999px;
+}

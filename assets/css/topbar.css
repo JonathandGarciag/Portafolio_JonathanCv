@@ -2,14 +2,12 @@
    Topbar / Header
 ========================= */
 
-/* Para que los anchors (#home, #about, etc.) no queden tapados por el sticky header */
 html {
   scroll-behavior: smooth !important;
   scroll-padding-top: 100px;
   overflow-x: hidden;
 }
 
-/* Header visual */
 header {
   position: sticky;
   top: 0;
@@ -20,6 +18,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
   padding: 18px 40px;
 }
 
@@ -29,9 +28,18 @@ header .logo {
   color: var(--accent);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 header nav {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 header nav a {
@@ -71,4 +79,36 @@ header nav a.active{
 
 header nav a.active::after {
   width: 100%;
+}
+
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid rgba(164, 156, 140, 0.7);
+  border-radius: 999px;
+  background: rgba(228, 216, 204, 0.55);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--tx);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 7px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, transform .15s ease;
+}
+
+.lang-btn:hover {
+  background: rgba(188, 164, 132, 0.20);
+  transform: translateY(-1px);
+}
+
+.lang-btn.active {
+  background: var(--accent);
+  color: var(--tx-title);
 }

@@ -1,0 +1,100 @@
+{
+  "topbar": {
+    "logo": "MyPortfolio",
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "training": "Training",
+    "viewer": "View",
+    "projects": "Projects",
+    "langLabel": "Language"
+  },
+  "home": {
+    "eyebrow": "Portfolio",
+    "role": "Full Stack Developer graduated from Fundación Kinal",
+    "age": "18 years old",
+    "quote": "\"Success is the sum of small efforts repeated day after day.\"",
+    "quoteAuthor": "-Robert Collier",
+    "downloadCv": "Download CV",
+    "viewCertificate": "View certificate",
+    "contact": "Contact me",
+    "docs": "Documentation"
+  },
+  "about": {
+    "titleHtml": "About me<br>Personal <span>CV</span>",
+    "text": "Backend developer evolving toward a full stack profile. I have experience in server-side applications and modern frontend foundations. My purpose is to build complete, efficient web solutions focused on real results.",
+    "subtitleHtml": "- Ability to collaborate effectively in multidisciplinary teams. <br>- Motivated by continuous improvement and constant learning.",
+    "photoAlt": "Profile photo"
+  },
+  "skills": {
+    "title": "Skills and Knowledge",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "frameworks": "Frameworks",
+    "databases": "Databases",
+    "tools": "Tools",
+    "desktop": "Desktop / Apps",
+    "auth": "Authentication",
+    "security": "Security"
+  },
+  "training": {
+    "title": "Education and Experience",
+    "subtitle": "At Fundación Kinal, diversified IT major",
+    "startTitle": "Getting started in programming",
+    "startText": "I began my programming education with introductory Java and, toward the end of that year, I gained fundamental knowledge of relational databases using MySQL.",
+    "consolidationTitle": "Tool consolidation and training",
+    "consolidationText": "During this year I became familiar with XAMPP, Apache Tomcat, and Postman for running and testing APIs. I also worked with JavaFX for graphical interfaces and used Git for version control and project management. In addition, I completed certification programs on Platzi and earned the following diplomas:",
+    "consolidationList": "Basic Java, Object-Oriented Programming in Java, Persistence with Java, Java and SQL, SQL and MySQL",
+    "fullstackTitle": "First steps into full stack development",
+    "fullstackText": "I entered the JavaScript ecosystem, adding Node.js for backend development, MongoDB as a NoSQL database, and React for the frontend, strengthening key modern web development skills. I also learned how to deploy projects to the cloud using MongoDB Atlas.",
+    "practiceTitle": "Internship experience at Tribal Worldwide Guatemala",
+    "practiceText": "My experience at Tribal Worldwide Guatemala, where I completed 400 hours of professional practice, was highly enriching and helped me strengthen both technical and soft skills. From the first days I received onboarding to the work environment and access to tools such as Clockify, corporate email, Jira, and Discord, as well as internal documentation such as “HU & PR's Documentation” and “Backend Devs Onboarding”. During the process, I deepened my use of PHP and Laravel, joined a project with repository access, and set up the development environment using Ubuntu and Docker to run and manage the required services. I worked on project changes, managing commits and pull requests to reflect updates in the repositories, and I attended the office twice (the main modality was virtual). Additionally, I reinforced my algorithm knowledge, solved a technical assessment designed by my supervisor to measure intern logic, and researched state management patterns to help improve the project architecture."
+  },
+  "viewer": {
+    "hint": "By clicking the images, they will expand for a better view, just like in Projects",
+    "comments": "Comments section",
+    "posts": "Posts section",
+    "suppliers": "Suppliers section",
+    "charts": "Charts section",
+    "dealerMenu": "Dealer menu section",
+    "login": "Login section",
+    "currency": "Currency conversion section",
+    "transfers": "Transfers section",
+    "imageAlt": "Project image"
+  },
+  "projects": {
+    "title": "Projects",
+    "socialDesc": "Social platform where you can publish posts and comment.",
+    "turboDesc": "Mechanical workshop management system.",
+    "storageDesc": "Page where you manage a storage company internally.",
+    "bankDesc": "Bank-style app using currency conversion APIs.",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "link": "Backend API REST",
+    "mainAlt": "Main image",
+    "thumb1": "Thumbnail 1",
+    "thumb2": "Thumbnail 2",
+    "UserApp": "Complete link of the project",
+    "UsuarioAppRJ" : "User module: React + JavaScript data management and access",
+    "UsuarioApp" : "User module: Asp.Net Core Web data management and access"
+  },
+  "certificates": {
+    "title": "My Certificates",
+    "showAll": "Show all certificates",
+    "showLess": "Show less",
+    "view": "View",
+    "download": "Download"
+  },
+  "footer": {
+    "title": "Contact my Gmail",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "messagePlaceholder": "Your message",
+    "send": "Send message",
+    "quote": "\"With faith and effort, every project can be achieved; the Lord guides me and His peace stays with me.\"",
+    "rights": "© 2025 Jonathan García. All rights reserved.",
+    "emailMissing": "EmailJS is not loaded.",
+    "sendOk": "Message sent successfully",
+    "sendError": "Error while sending"
+  }
+}

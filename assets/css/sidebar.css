@@ -2,58 +2,9 @@
    Sidebar (visual + layout)
 ========================= */
 
-/* Visual */
 .sidebar {
   background: var(--sidebar-bg);
   border-right: 1px solid var(--nav-border);
-}
-
-.sidebar-logo .icon {
-  font-size: 22px;
-  color: var(--accent);
-}
-
-/* Social icons */
-.sidebar-social a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  transition: background .2s ease, transform .15s ease;
-  color: var(--sidebar-tx); /* para SVG (currentColor) */
-}
-
-.sidebar-social img,
-.sidebar-social svg {
-  width: 22px;
-  height: 22px;
-  filter: brightness(0) invert(92%); /* blanco suave */
-  transition: filter 0.2s ease;
-}
-
-.sidebar-social a:hover{
-  background: var(--accent);
-  transform: translateY(-1px);
-}
-
-.sidebar-social a:hover img,
-.sidebar-social a:hover svg{
-  filter: brightness(0) invert(12%); /* negro suave sobre tan */
-}
-
-.sidebar-social a:active{
-  background: var(--accent-a);
-}
-
-/* Si algún SVG trae fill fijo, lo forzamos */
-.sidebar-social svg path{
-  fill: currentColor;
-}
-
-/* Layout */
-.sidebar {
   width: 60px;
   height: 100vh;
   display: flex;
@@ -64,6 +15,11 @@
   top: 0;
   left: 0;
   z-index: 10;
+}
+
+.sidebar-logo .icon {
+  font-size: 22px;
+  color: var(--accent);
 }
 
 .sidebar-logo {
@@ -78,9 +34,122 @@
   margin-bottom: 20px;
 }
 
-/* Empuja el contenido a la derecha por el ancho del sidebar */
 .content {
   margin-left: 60px;
   width: calc(100% - 60px);
   display: block;
+}
+
+.sidebar-social > a,
+.sidebar-account-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  transition: background 0.2s ease, transform 0.15s ease;
+  color: var(--sidebar-tx);
+}
+
+.sidebar-account-toggle {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sidebar-social > a img,
+.sidebar-social > a svg,
+.sidebar-account-toggle img,
+.sidebar-account-toggle svg {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(92%);
+  transition: filter 0.2s ease;
+}
+
+.sidebar-social > a:hover,
+.sidebar-account-toggle:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+.sidebar-social > a:hover img,
+.sidebar-social > a:hover svg,
+.sidebar-account-toggle:hover img,
+.sidebar-account-toggle:hover svg {
+  filter: brightness(0) invert(12%);
+}
+
+.sidebar-social > a:active,
+.sidebar-account-toggle:active {
+  background: var(--accent-a);
+}
+
+.sidebar-social > a svg path {
+  fill: currentColor;
+}
+
+.sidebar-dropdown {
+  position: relative;
+}
+
+.sidebar-account-menu {
+  position: absolute;
+  left: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 220px;
+  background: #f4eee4;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  z-index: 100;
+}
+
+.sidebar-dropdown.open .sidebar-account-menu {
+  display: flex;
+}
+
+.sidebar-account-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: transparent;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.sidebar-account-item:hover {
+  background: #d7c2a3;
+  transform: translateX(2px);
+}
+
+.sidebar-account-avatar {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block;
+  flex-shrink: 0;
+  filter: none !important;
+  -webkit-filter: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-account-username {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f1f1f;
+  line-height: 1;
 }

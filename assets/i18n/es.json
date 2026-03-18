@@ -1,0 +1,100 @@
+{
+  "topbar": {
+    "logo": "MyPortfolio",
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "training": "Formación",
+    "viewer": "Vista",
+    "projects": "Proyectos",
+    "langLabel": "Idioma"
+  },
+  "home": {
+    "eyebrow": "Portafolio",
+    "role": "Desarrollador Full Stack graduado de Fundación Kinal",
+    "age": "con una edad de 18 años",
+    "quote": "\"El éxito es la suma de pequeños esfuerzos repetidos día tras día.\"",
+    "quoteAuthor": "-Robert Collier",
+    "downloadCv": "Descargar CV",
+    "viewCertificate": "Ver certificado",
+    "contact": "Contáctame",
+    "docs": "Documentaciones"
+  },
+  "about": {
+    "titleHtml": "Sobre mí<br>Persona <span>CV</span>",
+    "text": "Desarrollador backend que evoluciona hacia un perfil full stack. Cuento con experiencia en aplicaciones del lado del servidor y bases de frontend modernas. Mi propósito es construir soluciones web integrales, eficientes y orientadas a resultados.",
+    "subtitleHtml": "- Capacidad para colaborar en equipo eficazmente en proyectos multidisciplinarios. <br>- Motivado por la mejora continua y el aprendizaje constante.",
+    "photoAlt": "Foto de perfil"
+  },
+  "skills": {
+    "title": "Habilidades y Conocimientos",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "frameworks": "Frameworks",
+    "databases": "Bases de Datos",
+    "tools": "Herramientas",
+    "desktop": "Desktop / Apps",
+    "auth": "Autenticación",
+    "security": "Seguridad"
+  },
+  "training": {
+    "title": "Formación y Experiencia",
+    "subtitle": "En Fundación Kinal Perito en Informática Diversificado",
+    "startTitle": "Inicios en la programación",
+    "startText": "Inicié mi formación en programación con el lenguaje Java a nivel introductorio y, hacia finales de ese año, adquirí conocimientos fundamentales de bases de datos relacionales utilizando MySQL.",
+    "consolidationTitle": "Consolidación de herramientas y formación",
+    "consolidationText": "Durante este año me familiaricé con el uso de XAMPP, Apache Tomcat y Postman para la ejecución y prueba de APIs. Además, trabajé con JavaFX para el desarrollo de interfaces gráficas y utilicé Git como sistema de control de versiones y gestión de proyectos. Asimismo, completé procesos de certificación en Platzi, obteniendo los siguientes diplomas:",
+    "consolidationList": "Java Básico, Java Programación Orientada a Objetos, Persistencia con Java, Java y SQL, SQL y MySQL",
+    "fullstackTitle": "Primeros pasos en el desarrollo full stack",
+    "fullstackText": "Me adentré en el ecosistema JavaScript, incorporando Node.js para el desarrollo backend, MongoDB como base de datos NoSQL y React para el frontend, consolidando así conocimientos clave de desarrollo web moderno. Adicionalmente, aprendí a desplegar proyectos en la nube utilizando MongoDB Atlas.",
+    "practiceTitle": "Experiencia en prácticas en Tribal Worldwide Guatemala",
+    "practiceText": "Mi experiencia en Tribal Worldwide Guatemala, donde completé 400 horas de prácticas profesionales, fue altamente enriquecedora y me permitió fortalecer tanto habilidades técnicas como blandas. Desde los primeros días recibí una inducción al entorno de trabajo y acceso a herramientas como Clockify, correo corporativo, Jira y Discord, además de documentación interna como “Documentación HU & PR's” e “Inducción Backend Devs”. Durante el proceso, profundicé en el uso de PHP y Laravel, participé en la incorporación a un proyecto con acceso a repositorios y configuré el entorno de desarrollo utilizando Ubuntu y Docker para ejecutar y gestionar los servicios necesarios. Trabajé realizando cambios en el proyecto, gestionando commits y pull requests para reflejar las actualizaciones en los repositorios, y asistí en dos ocasiones a las instalaciones (la modalidad principal fue virtual). Adicionalmente, reforcé mis conocimientos en algoritmos, resolví una evaluación técnica diseñada por mi encargado para medir la lógica de los practicantes e investigué sobre patrones de gestión de estado con el objetivo de contribuir a la mejora de la arquitectura del proyecto."
+  },
+  "viewer": {
+    "hint": "Al dar clic en las imágenes, se expandirán para una mejor visualización, al igual que en Projects",
+    "comments": "Sección Comentarios",
+    "posts": "Sección Publicaciones",
+    "suppliers": "Sección Proveedores",
+    "charts": "Sección Gráficas",
+    "dealerMenu": "Sección Menú Distribuidor",
+    "login": "Sección Login",
+    "currency": "Sección Conversión de Moneda",
+    "transfers": "Sección Transferencias",
+    "imageAlt": "Imagen del proyecto"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "socialDesc": "Medio social donde puedes hacer publicaciones y comentar.",
+    "turboDesc": "Sistema de control de taller mecánico.",
+    "storageDesc": "Página donde administras una almacenadora desde dentro.",
+    "bankDesc": "Imitación de un banco, usando APIs de conversión.",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "link": "Backend API REST",
+    "mainAlt": "Imagen principal",
+    "thumb1": "Miniatura 1",
+    "thumb2": "Miniatura 2",
+    "UserApp": "Link completo del proyecto",
+    "UsuarioAppRJ" : "Módulo de usuario: React + JavaScript gestión de datos y acceso",
+    "UsuarioApp" : "Módulo de usuario: Asp.Net Core Web gestión de datos y acceso"
+  },
+  "certificates": {
+    "title": "Mis Certificados",
+    "showAll": "Ver todos los certificados",
+    "showLess": "Ver menos",
+    "view": "Ver",
+    "download": "Descargar"
+  },
+  "footer": {
+    "title": "Contactar mi Gmail",
+    "namePlaceholder": "Tu nombre",
+    "emailPlaceholder": "Tu correo",
+    "messagePlaceholder": "Tu mensaje",
+    "send": "Enviar mensaje",
+    "quote": "\"Con fe y esfuerzo, todo proyecto se alcanza; el Señor me guía y su paz me acompaña.\"",
+    "rights": "© 2025 Jonathan García. Todos los derechos reservados.",
+    "emailMissing": "EmailJS no está cargado.",
+    "sendOk": "Mensaje enviado correctamente",
+    "sendError": "Error al enviar"
+  }
+}

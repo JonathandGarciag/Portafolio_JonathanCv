@@ -116,6 +116,10 @@
 .skill-chip i[title=".NET"] { color: #601ef9; }
 .skill-chip i[title="Laravel"] { color: #f1502f; }
 
+/* Nuevos colores */
+.skill-chip img[alt="Angular"] { filter: invert(13%) sepia(93%) saturate(7485%) hue-rotate(347deg) brightness(91%) contrast(118%); }
+.skill-chip img[alt="ASP.NET Core"] { filter: invert(21%) sepia(92%) saturate(2479%) hue-rotate(237deg) brightness(96%) contrast(98%); }
+
 .skill-header i {
   font-size: 1.6rem;
   width: 26px;
