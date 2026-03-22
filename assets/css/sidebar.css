@@ -30,6 +30,7 @@
   margin-top: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 12px;
   margin-bottom: 20px;
 }
@@ -41,7 +42,8 @@
 }
 
 .sidebar-social > a,
-.sidebar-account-toggle {
+.sidebar-account-toggle,
+.sidebar-contact-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,7 +54,8 @@
   color: var(--sidebar-tx);
 }
 
-.sidebar-account-toggle {
+.sidebar-account-toggle,
+.sidebar-contact-toggle {
   border: none;
   background: transparent;
   cursor: pointer;
@@ -62,7 +65,9 @@
 .sidebar-social > a img,
 .sidebar-social > a svg,
 .sidebar-account-toggle img,
-.sidebar-account-toggle svg {
+.sidebar-account-toggle svg,
+.sidebar-contact-toggle img,
+.sidebar-contact-toggle svg {
   width: 22px;
   height: 22px;
   filter: brightness(0) invert(92%);
@@ -70,7 +75,8 @@
 }
 
 .sidebar-social > a:hover,
-.sidebar-account-toggle:hover {
+.sidebar-account-toggle:hover,
+.sidebar-contact-toggle:hover {
   background: var(--accent);
   transform: translateY(-1px);
 }
@@ -78,12 +84,15 @@
 .sidebar-social > a:hover img,
 .sidebar-social > a:hover svg,
 .sidebar-account-toggle:hover img,
-.sidebar-account-toggle:hover svg {
+.sidebar-account-toggle:hover svg,
+.sidebar-contact-toggle:hover img,
+.sidebar-contact-toggle:hover svg {
   filter: brightness(0) invert(12%);
 }
 
 .sidebar-social > a:active,
-.sidebar-account-toggle:active {
+.sidebar-account-toggle:active,
+.sidebar-contact-toggle:active {
   background: var(--accent-a);
 }
 
@@ -151,5 +160,219 @@
   font-size: 14px;
   font-weight: 600;
   color: #1f1f1f;
-  line-height: 1;
+  line-height: 1.1;
+}
+
+/* =========================
+   Contact popover
+========================= */
+
+.sidebar-contact-popover {
+  position: fixed;
+  left: 72px;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 320px;
+  background: #f4eee4;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 12px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  z-index: 1000;
+}
+
+.sidebar-contact-popover.open {
+  display: flex;
+}
+
+.sidebar-account-item--contact {
+  align-items: flex-start;
+}
+
+.sidebar-account-item--static {
+  cursor: default;
+}
+
+.sidebar-account-item--static:hover {
+  background: transparent;
+  transform: none;
+}
+
+.sidebar-account-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-account-subtext {
+  font-size: 12px;
+  font-weight: 600;
+  color: #5b5b5b;
+  line-height: 1.2;
+}
+
+.sidebar-account-avatar--icon {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.sidebar-account-avatar--icon img,
+.sidebar-account-avatar--icon svg {
+  width: 20px !important;
+  height: 20px !important;
+  display: block;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+.sidebar-account-avatar--whatsapp {
+  background: rgba(18, 140, 126, 0.14) !important;
+  color: #128c7e !important;
+}
+
+.sidebar-account-avatar--phone {
+  background: rgba(37, 99, 235, 0.14) !important;
+  color: #2563eb !important;
+}
+
+#sidebar-contact-popover {
+  min-width: 340px;
+}
+
+#sidebar-contact-popover .sidebar-contact-actions {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 10px !important;
+  width: 100% !important;
+  margin-top: 4px !important;
+  align-items: stretch !important;
+}
+
+#sidebar-contact-popover .sidebar-contact-actions > .sidebar-contact-action {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  width: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  min-height: 42px !important;
+  padding: 10px 12px !important;
+  border: none !important;
+  border-radius: 12px !important;
+  box-sizing: border-box !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+#sidebar-contact-popover .sidebar-contact-actions > .sidebar-contact-action > span {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: inherit !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+}
+
+#sidebar-contact-popover .sidebar-contact-actions > .sidebar-contact-action > svg {
+  width: 15px !important;
+  height: 15px !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+}
+
+#sidebar-contact-popover .sidebar-contact-actions > .sidebar-contact-action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+#sidebar-contact-popover .sidebar-contact-actions > .sidebar-contact-action--copy {
+  background: rgba(180, 83, 9, 0.16) !important;
+  color: #b45309 !important;
+}
+
+#sidebar-contact-popover .sidebar-contact-actions > .sidebar-contact-action--copy:hover {
+  background: rgba(180, 83, 9, 0.24) !important;
+}
+
+#sidebar-contact-popover .sidebar-contact-actions > .sidebar-contact-action--call {
+  background: rgba(37, 99, 235, 0.16) !important;
+  color: #2563eb !important;
+}
+
+#sidebar-contact-popover .sidebar-contact-actions > .sidebar-contact-action--call:hover {
+  background: rgba(37, 99, 235, 0.24) !important;
+}
+
+.sidebar-toast {
+  position: fixed;
+  left: 86px;
+  bottom: 26px;
+  background: #1f1f1f;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1200;
+}
+
+.sidebar-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sidebar-email-menu {
+  min-width: 300px;
+}
+
+.sidebar-account-item--button {
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.sidebar-account-item--button:hover {
+  background: #d7c2a3;
+  transform: translateX(2px);
+}
+
+.sidebar-account-avatar--gmail {
+  background: rgba(234, 67, 53, 0.14) !important;
+  color: #ea4335 !important;
+}
+
+.sidebar-account-avatar--gmailweb {
+  background: rgba(197, 34, 31, 0.14) !important;
+  color: #c5221f !important;
+}
+
+.sidebar-account-avatar--copymail {
+  background: rgba(180, 83, 9, 0.14) !important;
+  color: #b45309 !important;
 }

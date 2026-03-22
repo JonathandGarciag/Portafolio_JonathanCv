@@ -76,7 +76,8 @@
     "thumb2": "Thumbnail 2",
     "UserApp": "Complete link of the project",
     "UsuarioAppRJ" : "User module: React + JavaScript data management and access",
-    "UsuarioApp" : "User module: Asp.Net Core Web data management and access"
+    "UsuarioApp" : "User module: Asp.Net Core Web data management and access",
+    "UserPhLv" : "User module: Php + Laravel data management and access"
   },
   "certificates": {
     "title": "My Certificates",
@@ -96,5 +97,27 @@
     "emailMissing": "EmailJS is not loaded.",
     "sendOk": "Message sent successfully",
     "sendError": "Error while sending"
+  },
+  "sidebar": {
+    "contactMenu": "Open contact options",
+    "gmailMenu": "Open Gmail options",
+
+    "emailSendTitle": "Send email",
+    "emailSendSubtext": "Open quick compose",
+    "emailCopyTitle": "Copy email",
+    "emailCopySubtext": "Copy address to clipboard",
+    "emailWebTitle": "Gmail web",
+    "emailWebSubtext": "Open compose in Gmail",
+
+    "whatsappTitle": "WhatsApp",
+    "whatsappSubtext": "Open direct chat",
+
+    "copyPhone": "Copy",
+    "callPhone": "Call",
+    "copyPhoneDone": "Copied",
+    "copyPhoneToast": "Phone number copied",
+    "copyErrorToast": "Could not copy",
+    "callConfirmPrefix": "This button is for calling the number",
+    "callConfirmQuestion": "Do you want to continue with the call?"
   }
 }

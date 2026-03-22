@@ -5,7 +5,7 @@
 
     <div class="sidebar-social">
         <div class="sidebar-dropdown">
-            <button class="sidebar-account-toggle" type="button" aria-expanded="false" aria-label="Abrir opciones de cuenta">
+            <button class="sidebar-account-toggle" type="button" aria-expanded="false" aria-label="Abrir opciones de GitHub">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub">
             </button>
 
@@ -22,26 +22,119 @@
             </div>
         </div>
 
-        <a href="https://wa.me/50259318205" target="_blank">
+        <button class="sidebar-contact-toggle" type="button" aria-expanded="false" aria-label="Abrir opciones de contacto">
             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp">
-        </a>
+        </button>
 
-        <a href="tel:+50259318205">
-            <svg width="24" height="24" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                <path d="M391 351c-15-15-32-15-47-15-9 0-17 4-24 10l-36 36c-49-26-89-66-115-115l36-36c15-15 15-32 15-47 0-15 0-32-15-47L191 56c-15-15-32-15-47-15-9 0-17 4-24 10l-56 56c-15 15-15 32-15 47 0 152 123 275 275 275 15 0 32 0 47-15l56-56c6-6 10-15 10-24 0-15 0-32-15-47z"/>
-            </svg>
-        </a>
+        <div class="sidebar-dropdown">
+            <button class="sidebar-account-toggle" type="button" aria-expanded="false" aria-label="Abrir opciones de Gmail">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Gmail">
+            </button>
 
-        <a href="mailto:l10jonathang96@gmail.com" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Gmail">
-        </a>
+            <div class="sidebar-account-menu sidebar-email-menu">
+                <a
+                    href="mailto:l10jonathang96@gmail.com?subject=Contacto%20desde%20tu%20portafolio&body=Hola%20Jonathan,%20vi%20tu%20portafolio%20y%20quiero%20contactarte."
+                    class="sidebar-account-item sidebar-account-item--contact">
+                    <span class="sidebar-account-avatar sidebar-account-avatar--icon sidebar-account-avatar--gmail">
+                        <img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Enviar correo">
+                    </span>
+
+                    <div class="sidebar-account-content">
+                        <span class="sidebar-account-username" data-i18n="sidebar.emailSendTitle">Enviar correo</span>
+                        <span class="sidebar-account-subtext" data-i18n="sidebar.emailSendSubtext">Abrir redacción rápida</span>
+                    </div>
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-account-item sidebar-account-item--button"
+                    data-copy-email="l10jonathang96@gmail.com"
+                    aria-label="Copiar correo">
+                    <span class="sidebar-account-avatar sidebar-account-avatar--icon sidebar-account-avatar--copymail">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path fill="currentColor" d="M368 448H112c-26.5 0-48-21.5-48-48V144h48v256h256v48zm80-336v208c0 26.5-21.5 48-48 48H176c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h224c26.5 0 48 21.5 48 48z"/>
+                        </svg>
+                    </span>
+
+                    <div class="sidebar-account-content">
+                        <span class="sidebar-account-username sidebar-email-copy-label" data-i18n="sidebar.emailCopyTitle">Copiar correo</span>
+                        <span class="sidebar-account-subtext" data-i18n="sidebar.emailCopySubtext">Copiar dirección al portapapeles</span>
+                    </div>
+                </button>
+
+                <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=l10jonathang96@gmail.com&su=Contacto%20desde%20tu%20portafolio&body=Hola%20Jonathan,%20vi%20tu%20portafolio%20y%20quiero%20contactarte."
+                    target="_blank"
+                    rel="noopener"
+                    class="sidebar-account-item sidebar-account-item--contact">
+                    <span class="sidebar-account-avatar sidebar-account-avatar--icon sidebar-account-avatar--gmailweb">
+                        <img src="https://cdn.simpleicons.org/gmail/C5221F" alt="Gmail web">
+                    </span>
+
+                    <div class="sidebar-account-content">
+                        <span class="sidebar-account-username" data-i18n="sidebar.emailWebTitle">Gmail web</span>
+                        <span class="sidebar-account-subtext" data-i18n="sidebar.emailWebSubtext">Abrir redacción en Gmail</span>
+                    </div>
+                </a>
+            </div>
+        </div>
 
         <a href="https://gt.linkedin.com/in/jonathan-david-garc%C3%ADa-guti%C3%A9rrez-3827183a3?trk=public_profile_samename-profile" target="_blank" rel="noopener">
             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn">
         </a>
 
-        <a href="https://www.computrabajo.com" target="_blank" style="display: flex; align-items: center; gap: 6px;">
-            <img src="https://www.computrabajo.com/favicon.ico" alt="CompuTrabajo" style="height: 1em;">
+        <a href="https://www.computrabajo.com" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center;">
+            <img src="https://www.computrabajo.com/favicon.ico" alt="CompuTrabajo" style="height: 18px; width: 18px;">
         </a>
+    </div>
+
+    <div class="sidebar-contact-popover" id="sidebar-contact-popover">
+        <a href="https://wa.me/50259318205" target="_blank" rel="noopener" class="sidebar-account-item sidebar-account-item--contact">
+            <span class="sidebar-account-avatar sidebar-account-avatar--icon sidebar-account-avatar--whatsapp">
+                <img src="https://cdn.simpleicons.org/whatsapp/128C7E" alt="WhatsApp">
+            </span>
+
+            <div class="sidebar-account-content">
+                <span class="sidebar-account-username" data-i18n="sidebar.whatsappTitle">WhatsApp</span>
+                <span class="sidebar-account-subtext" data-i18n="sidebar.whatsappSubtext">Abrir chat directo</span>
+            </div>
+        </a>
+
+        <div class="sidebar-account-item sidebar-account-item--contact sidebar-account-item--static">
+            <span class="sidebar-account-avatar sidebar-account-avatar--icon sidebar-account-avatar--phone">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path fill="currentColor" d="M391 351c-15-15-32-15-47-15-9 0-17 4-24 10l-36 36c-49-26-89-66-115-115l36-36c15-15 15-32 15-47 0-15 0-32-15-47L191 56c-15-15-32-15-47-15-9 0-17 4-24 10l-56 56c-15 15-15 32-15 47 0 152 123 275 275 275 15 0 32 0 47-15l56-56c6-6 10-15 10-24 0-15 0-32-15-47z"/>
+                </svg>
+            </span>
+
+            <div class="sidebar-account-content">
+                <span class="sidebar-account-username">+502 5931-8205</span>
+
+                <div class="sidebar-contact-actions">
+                    <button
+                        type="button"
+                        class="sidebar-contact-action sidebar-contact-action--copy"
+                        data-copy-phone="+502 5931-8205"
+                        aria-label="Copiar número">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path fill="currentColor" d="M368 448H112c-26.5 0-48-21.5-48-48V144h48v256h256v48zm80-336v208c0 26.5-21.5 48-48 48H176c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h224c26.5 0 48 21.5 48 48z"/>
+                        </svg>
+                        <span data-i18n="sidebar.copyPhone">Copiar</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="sidebar-contact-action sidebar-contact-action--call"
+                        data-call-phone="+50259318205"
+                        data-call-label="+502 5931-8205"
+                        aria-label="Llamar al número">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path fill="currentColor" d="M391 351c-15-15-32-15-47-15-9 0-17 4-24 10l-36 36c-49-26-89-66-115-115l36-36c15-15 15-32 15-47 0-15 0-32-15-47L191 56c-15-15-32-15-47-15-9 0-17 4-24 10l-56 56c-15 15-15 32-15 47 0 152 123 275 275 275 15 0 32 0 47-15l56-56c6-6 10-15 10-24 0-15 0-32-15-47z"/>
+                        </svg>
+                        <span data-i18n="sidebar.callPhone">Llamar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </aside>

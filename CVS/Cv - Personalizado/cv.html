@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV - Jonathan David García</title>
+
+  <!-- Tipografía -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dev icons/devicon@v2.15.1/devicon.min.css">
+  <style>
+/* Fallback: mismos ajustes clave, por si el archivo externo no se aplica al imprimir */
+@media print {
+  @page { size: A4; margin: 0; }
+
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  html, body{
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  #btnExport{ display: none !important; }
+  .qr-box{ display: none !important; }
+
+  /* ✅ A4 real, sin “scale” */
+  .cv{
+    width: 210mm !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+
+    transform: none !important;   /* 🔥 clave */
+  }
+
+  .aside{
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .section, .xp-item, .cert-card, .edu-item{
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Si necesitás que quepa en 1 página: compactá aquí (sin scale) */
+  .main, .aside { padding: 16px !important; }
+  .section { margin-top: 12px !important; }
+  .xp-item { padding: 7px 9px !important; }
+  .cert-card { padding: 6px 8px !important; }
+}
+</style>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./cv.css" media="all"/>
+
+  <!-- ✅ Forzar bordes cuadrados en la hoja (pantalla + PDF) -->
+  <style>
+    .cv {
+      border-radius: 0 !important;
+    }
+  </style>
+</head>
+<body>
+  <article class="cv">
+    <!-- Lateral -->
+    <aside class="aside">
+      <img src="../assets/img/MiPersonaSonrisaCortada.png" alt="Jonathan García" class="portrait"/>
+
+      <h2>Jonathan David García</h2>
+      <p class="role">Desarrollador Full Stack (18 años)</p>
+
+      <section class="block">
+        <h3 class="block-title">Contacto</h3>
+        <div class="info-row"><i class="fa-solid fa-envelope"></i> l10jonathang96@gmail.com</div>
+        <div class="info-row"><i class="fa-solid fa-phone"></i> +502 5931 8205</div>
+        <div class="info-row"><i class="fa-brands fa-github"></i>
+          <a href="https://github.com/JonathandGarciag" target="_blank" rel="noopener">/JonathandGarciag</a>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="block-title">Habilidades técnicas</h3>
+        <div class="skill-list">
+          <span class="skill">HTML5</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">MySQL</span>
+          <span class="skill">Sql Server</span>
+          <span class="skill">PHP</span>
+          <span class="skill">ASP.Net</span>
+          <span class="skill">Laravel</span>
+          <span class="skill">PostgreSQL</span>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="block-title">Tecnologías</h3>
+        <div class="tech-grid" aria-label="Tecnologías">
+          <i class="fa-brands fa-html5"  title="HTML5"  style="color:#e34c26"></i>
+          <i class="fa-brands fa-css3-alt" title="CSS3"   style="color:#264de4"></i>
+          <i class="fa-brands fa-js"      title="JavaScript" style="color:#f0db4f"></i>
+          <i class="fa-brands fa-react"   title="React"   style="color:#61dafb"></i>
+          <i class="fa-brands fa-node-js" title="Node.js" style="color:#68a063"></i>
+          <i class="fa-solid fa-database" title="DB"      style="color:#139ffc"></i>
+          <i class="fa-brands fa-git-alt" title="Git"     style="color:#f1502f"></i>
+          <i class="fa-brands fa-java"    title="Java"    style="color:#ff2c2c"></i>
+          <i class="fa-brands fa-php"     title="PHP" style="color:#f1502f"></i>
+          <i class="devicon-csharp-plain colored" title="C#" style="color: #9d00ff;"></i>
+          <i class="devicon-microsoftsqlserver-plain colored" title="SQL Server" style="color: #fff;"></i>
+          <i class="devicon-dotnetcore-plain colored" title=".NET" style="color:#601ef9"></i>
+          <i class="devicon-mysql-plain colored" title="MySQL" style="color:#139ffc"></i>
+          <i class="devicon-laravel-plain colored" title="Laravel" style="color:#f1502f"></i>
+        </div>
+      </section>
+
+      <section class="block qr-box">
+        <h3 class="block-title">Portafolio</h3>
+        <img src="../assets/img/Portafolio.png" id="qr-portfolio" class="qr-img" src="./assets/img/Portafolio.png" alt="QR a portafolio">
+        <div class="qr-caption">Escanéame para ver mi portafolio / GitHub entre otras cosas</div>
+        <img src="../assets/img/Linkedin.png" img id="qr-linkedin"  class="qr-img" src="./assets/img/Linkedin.png" alt="QR a linkedin">
+        <div class="qr-caption">Escanéame para ver mi <a href="https://gt.linkedin.com/in/jonathan-david-garc%C3%ADa-guti%C3%A9rrez-3827183a3?trk=public_profile_samename-profile" target="_blank" rel="noopener">Linkedin Jonathan Gutiérrez</a></div>
+      </section>
+
+      <section class="block">
+        <h3 class="block-title">Disponibilidad</h3>
+        <ul class="mini-list">
+          <li><strong>Modalidad:</strong> Presencial / Remoto / Híbrido</li>
+          <li><strong>Horario:</strong> Medio tiempo / Tiempo completo</li>
+          <li><strong>Ubicación:</strong> Ciudad de Guatemala</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <h3 class="block-title">Idiomas</h3>
+        <ul class="mini-list">
+          <li>Español — Nativo</li>
+          <li>Inglés — B1–B2 (lectura técnica)</li>
+        </ul>
+      </section>
+
+    </aside>
+
+    <!-- Principal -->
+    <main class="main">
+      <header class="header">
+        <div>
+          <h1 class="name">Jonathan David García Gutiérrez</h1>
+          <p class="tagline">Desarrollador en formación con foco en backend y proyección full stack. Me gusta diseñar soluciones limpias y eficientes.</p>
+        </div>
+      </header>
+
+      <!-- EXPERIENCIA -->
+      <section class="section">
+        <h3 class="section-title">Experiencia</h3>
+        <div class="xp">
+          <article class="xp-item">
+            <div class="xp-head">
+              <div class="xp-role">Prácticas profesionales — Tribal Worldwide Guatemala</div>
+              <div class="xp-meta">400 horas · 2025 Agosto-Octubre · Virtual</div>
+            </div>
+            <ul>
+              <li>Resolución de ejercicios de <strong>algoritmos</strong> y evaluación técnica; investigación sobre <strong>gestión de estado</strong> para mejorar la arquitectura.</li>
+              <li>Onboarding y herramientas: <strong>Clockify</strong>, <strong>Jira</strong>, <strong>Discord</strong>; capacitación de <em>Documentación HU &amp; PR’s</em> e <em>Inducción Backend Devs</em>.</li>
+              <li>Practica e implementación de <strong>PHP</strong> y <strong>Laravel</strong> para tareas de backend.</li>
+              <li>Entorno de trabajo con <strong>Ubuntu</strong> y <strong>Docker</strong>; configuración local de proyectos, repos y flujos de commits/PRs.</li>
+              <li>Participación en repositorios del proyecto y despliegue de cambios verificables.</li>
+              <li>Actividades on-site (dos visitas) y coordinación virtual diaria.</li>
+            </ul>
+            <div class="pills">
+              <span class="pill">PHP</span><span class="pill">Laravel</span>
+              <span class="pill">Docker</span><span class="pill">Ubuntu</span>
+              <span class="pill">Git/GitHub</span><span class="pill">Jira</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- EDUCACIÓN -->
+      <section class="section">
+        <h3 class="section-title">Educación</h3>
+        <p><strong>Fundación Kinal</strong> — Perito en Informática (Diversificado).</p>
+        <div class="edu">
+          <div class="edu-item">
+            <div class="edu-year">2023</div>
+            <p class="edu-detail">Inicio en programación con <strong>Java</strong> y fundamentos de <strong>MySQL y PostgreSQL</strong>.</p>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2024</div>
+            <div>
+              <p class="edu-detail">Herramientas: <strong>XAMPP</strong>, <strong>Tomcat</strong>, <strong>Postman</strong>, <strong>JavaFX</strong>, <strong>Git</strong>.</p>
+              <p class="edu-detail">Certificaciones Platzi:
+                <span class="badge">Java Básico</span>
+                <span class="badge">Java OOP</span>
+                <span class="badge">Persistencia con Java</span>
+                <span class="badge">Java y SQL</span>
+                <span class="badge">SQL y MySQL</span>
+              </p>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2025</div>
+            <p class="edu-detail">Ecosistema JavaScript: <strong>Node.js</strong> (backend), <strong>React</strong> (frontend) y <strong>MongoDB/MongoDB Atlas</strong>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- APRENDIZAJES RECIENTES -->
+      <section class="section">
+        <h3 class="section-title">Aprendizajes &amp; Logros recientes</h3>
+        <ul>
+          <li>Fortalecimiento de conocimientos en <strong>PHP</strong>, <strong>JavaScript</strong> y <strong>HTML</strong> mediante cursos, prácticas y proyectos personales.</li>
+          <li>Implementación de soluciones web con Laravel y <strong>PHP</strong> en ejercicios prácticos y desarrollos orientados al aprendizaje.</li>
+          <li>Experiencia en modelado, consultas y gestión de datos con <strong>MySQL</strong>, además de uso de <strong>PostgreSQL</strong> y <strong>SQL Server</strong> en proyectos personales.</li>
+          <li>Desarrollo de interfaces con <strong>HTML</strong> y manejo de interactividad del lado del cliente con <strong>JavaScript</strong>.</li>
+        </ul>
+      </section>
+
+      <!-- PROYECTOS -->
+      <section class="section">
+        <h3 class="section-title">Proyectos destacados</h3>
+        <ul class="project-list">
+          <li><strong>Social Blog</strong>: blog social con publicaciones y comentarios <span class="badge">Node.js/JavaScript</span><span class="badge">React</span><span class="badge">MongoDB</span></li>
+          <li><strong>TurboFix</strong>: sistema de control de taller mecánico <span class="badge">Java</span><span class="badge">MySQL</span></li>
+          <li><strong>Almacenadora</strong>: sistema administrativo con estadísticas <span class="badge">Web App</span></li>
+          <li><strong>Bank Kova Capital</strong>: plataforma bancaria con APIs y MongoDB Atlas <span class="badge">Node.js/JavaScript</span><span class="badge">Mongo Atlas</span></li>
+        </ul>
+      </section>
+
+      <!-- CERTIFICACIONES -->
+      <section class="section">
+  <h3 class="section-title">Certificaciones</h3>
+
+  <div class="cert-grid">
+    <article class="cert-card">
+      <div class="cert-meta">
+        <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-text">
+          <p class="cert-title">PHP: Instalación, Fundamentos y Operadores</p>
+          <p class="cert-sub">Platzi · Enero 2026</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="cert-card">
+      <div class="cert-meta">
+        <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-text">
+          <p class="cert-title">Fundamentos de PHP</p>
+          <p class="cert-sub">Platzi · Enero 2026</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="cert-card">
+      <div class="cert-meta">
+        <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-text">
+          <p class="cert-title">Laravel</p>
+          <p class="cert-sub">Platzi · Enero 2026</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="cert-card">
+      <div class="cert-meta">
+        <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-text">
+          <p class="cert-title">SQL y MySQL</p>
+          <p class="cert-sub">Platzi · Febrero 2026</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="cert-card">
+      <div class="cert-meta">
+        <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-text">
+          <p class="cert-title">PostgreSQL Aplicado a Ciencia de Datos</p>
+          <p class="cert-sub">Platzi · Marzo 2026</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="cert-card">
+      <div class="cert-meta">
+        <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-text">
+          <p class="cert-title">Curso de APIs con .NETL</p>
+          <p class="cert-sub">Platzi · 2026</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+    </main>
+  </article>
+
+  <!-- Botón (se oculta al imprimir) -->
+<button id="btnExport" onclick="exportCVToPDF()" style="position:fixed;right:16px;bottom:16px;z-index:9999;padding:10px 14px;border:1px solid #cbd5e1;border-radius:10px;background:#ffffffcc;backdrop-filter:blur(6px);cursor:pointer">Exportar a PDF</button>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+<script>
+async function exportCVToPDF() {
+  const { jsPDF } = window.jspdf;
+  const node = document.querySelector(".cv");
+
+  // ✅ más nitidez (3 suele verse mucho mejor que 2)
+  const SCALE = 3;
+
+  // ✅ queremos la mejor calidad posible sin pasar 3MB
+  const MAX_BYTES = 3 * 1024 * 1024;
+  let JPEG_Q = 0.98;
+
+  const canvas = await html2canvas(node, {
+    scale: SCALE,
+    useCORS: true,
+    backgroundColor: "#ffffff",
+    scrollY: -window.scrollY,
+    windowWidth: node.scrollWidth,
+    windowHeight: node.scrollHeight
+  });
+
+  const pdf = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait", compress: true });
+  const pageW = pdf.internal.pageSize.getWidth();   // 210
+  const pageH = pdf.internal.pageSize.getHeight();  // 297
+
+  // helper: estimar bytes del dataURL base64
+  const estimateBytes = (dataUrl) => {
+    const b64 = (dataUrl.split(",")[1] || "");
+    return Math.ceil((b64.length * 3) / 4);
+  };
+
+  // generar imagen con el mayor Q posible sin pasarse de 3MB
+  let imgData = canvas.toDataURL("image/jpeg", JPEG_Q);
+  while (estimateBytes(imgData) > MAX_BYTES && JPEG_Q > 0.80) {
+    JPEG_Q -= 0.03;
+    imgData = canvas.toDataURL("image/jpeg", JPEG_Q);
+  }
+
+  // ✅ SIEMPRE llenar el ancho
+  const imgW = pageW;
+
+  // ✅ 1 sola hoja y sin barra (tu regla actual)
+  const imgH = pageH;
+
+  // ✅ "SLOW" suele verse mejor que "FAST" en el PDF final
+  pdf.addImage(imgData, "JPEG", 0, 0, imgW, imgH, undefined, "SLOW");
+
+  pdf.save("CV_Jonathan_Garcia.pdf");
+}
+</script>
+</body>
+</html>

@@ -76,7 +76,8 @@
     "thumb2": "Miniatura 2",
     "UserApp": "Link completo del proyecto",
     "UsuarioAppRJ" : "Módulo de usuario: React + JavaScript gestión de datos y acceso",
-    "UsuarioApp" : "Módulo de usuario: Asp.Net Core Web gestión de datos y acceso"
+    "UsuarioApp" : "Módulo de usuario: Asp.Net Core Web gestión de datos y acceso",
+    "UserPhLv" : "Módulo de usuario: Php + Laravel gestión de datos y acceso"
   },
   "certificates": {
     "title": "Mis Certificados",
@@ -96,5 +97,27 @@
     "emailMissing": "EmailJS no está cargado.",
     "sendOk": "Mensaje enviado correctamente",
     "sendError": "Error al enviar"
+  },
+  "sidebar": {
+    "contactMenu": "Abrir opciones de contacto",
+    "gmailMenu": "Abrir opciones de Gmail",
+
+    "emailSendTitle": "Enviar correo",
+    "emailSendSubtext": "Abrir redacción rápida",
+    "emailCopyTitle": "Copiar correo",
+    "emailCopySubtext": "Copiar dirección al portapapeles",
+    "emailWebTitle": "Gmail web",
+    "emailWebSubtext": "Abrir redacción en Gmail",
+
+    "whatsappTitle": "WhatsApp",
+    "whatsappSubtext": "Abrir chat directo",
+
+    "copyPhone": "Copiar",
+    "callPhone": "Llamar",
+    "copyPhoneDone": "Ya copiado",
+    "copyPhoneToast": "Número copiado",
+    "copyErrorToast": "No se pudo copiar",
+    "callConfirmPrefix": "Este botón es para llamar al número",
+    "callConfirmQuestion": "¿Deseas continuar con la llamada?"
   }
 }
